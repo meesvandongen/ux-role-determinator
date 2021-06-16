@@ -20,6 +20,15 @@ export const state = createSlice({
     researchEvangelistAssessment: Competency.noLevelOfCompetency,
     conductingResearchAssessment: Competency.noLevelOfCompetency,
     definingResearchAssessment: Competency.noLevelOfCompetency,
+    // UX Writer
+    campaigningAssessment: Competency.noLevelOfCompetency,
+    contentManagementAssessment: Competency.noLevelOfCompetency,
+    contentStrategyAssessment: Competency.noLevelOfCompetency,
+    contentWritingAssessment: Competency.noLevelOfCompetency,
+    // Creative Developer
+    designImplementationAssessment: Competency.noLevelOfCompetency,
+    richInteractionAssessment: Competency.noLevelOfCompetency,
+    codeUxAdvocateAssessment: Competency.noLevelOfCompetency,
   },
   reducers: {
     graphicsAssessmentSliderMoved: (
@@ -66,6 +75,48 @@ export const state = createSlice({
       action: CompetencyValuePayloadAction
     ) => {
       state.definingResearchAssessment = action.payload.value;
+    },
+    campaigningAssessmentSliderMoved: (
+      state,
+      action: CompetencyValuePayloadAction
+    ) => {
+      state.campaigningAssessment = action.payload.value;
+    },
+    contentManagementAssessmentSliderMoved: (
+      state,
+      action: CompetencyValuePayloadAction
+    ) => {
+      state.contentManagementAssessment = action.payload.value;
+    },
+    contentStrategyAssessmentSliderMoved: (
+      state,
+      action: CompetencyValuePayloadAction
+    ) => {
+      state.contentStrategyAssessment = action.payload.value;
+    },
+    contentWritingAssessmentSliderMoved: (
+      state,
+      action: CompetencyValuePayloadAction
+    ) => {
+      state.contentWritingAssessment = action.payload.value;
+    },
+    designImplementationAssessmentSliderMoved: (
+      state,
+      action: CompetencyValuePayloadAction
+    ) => {
+      state.designImplementationAssessment = action.payload.value;
+    },
+    richInteractionAssessmentSliderMoved: (
+      state,
+      action: CompetencyValuePayloadAction
+    ) => {
+      state.richInteractionAssessment = action.payload.value;
+    },
+    codeUxAdvocateAssessmentSliderMoved: (
+      state,
+      action: CompetencyValuePayloadAction
+    ) => {
+      state.codeUxAdvocateAssessment = action.payload.value;
     },
   },
 });

@@ -1,4 +1,8 @@
 import React from "react";
+import { Campaigning } from "./Campaigning";
+import { ContentManagement } from "./ContentManagement";
+import { ContentStrategy } from "./ContentStrategy";
+import { ContentWriting } from "./ContentWriting";
 
 export function ContentSpecialist() {
   return (
@@ -14,6 +18,10 @@ export function ContentSpecialist() {
         klant.
       </p>
       <h2>Taken</h2>
+      <ContentWriting />
+      <Campaigning />
+      <ContentManagement />
+      <ContentStrategy />
     </div>
   );
 }

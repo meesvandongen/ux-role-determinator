@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { TaskSection } from "../../components/TaskSection";
-import { state } from "../../state";
+import { TaskSection } from "../../../components/TaskSection";
+import { state } from "../../../state";
 
 export function ResearchEvangelist() {
   const assessmentValue = useSelector(
