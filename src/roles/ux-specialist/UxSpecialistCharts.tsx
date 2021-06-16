@@ -97,7 +97,7 @@ export function UxSpecialistCharts(): JSX.Element {
       name: teamResult.name,
     }));
     return transformStateDataToChartData([
-      { ...state, name: "own" },
+      { ...state, name: "Eigen grafiek data" },
       ...teamData,
     ]);
   }, [state, teamResults]);
@@ -210,7 +210,7 @@ export function UxSpecialistCharts(): JSX.Element {
         <ResponsiveRadar
           data={data}
           keys={[
-            "own",
+            "Eigen grafiek data",
             ...teamResults
               .filter((result) => result.value.length > 0)
               .map((v) => v.name),
