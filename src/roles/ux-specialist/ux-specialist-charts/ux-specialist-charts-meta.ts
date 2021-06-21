@@ -35,3 +35,19 @@ export const categoriesTitles: {
   richInteractionAssessment: "Rijke interacties",
   codeUxAdvocateAssessment: "UX developer advocate",
 };
+
+export const combinedCategoriesToRender = [
+  "visualInteractionDesigner",
+  "userResearcher",
+  "uxWriter",
+  "creativeDeveloper",
+];
+
+export const combinedCategoriesTitles: {
+  [key: string]: string;
+} = {
+  visualInteractionDesigner: "Visual & Interaction Designer",
+  userResearcher: "User Researcher",
+  uxWriter: "Writing",
+  creativeDeveloper: "Creative Developer",
+};

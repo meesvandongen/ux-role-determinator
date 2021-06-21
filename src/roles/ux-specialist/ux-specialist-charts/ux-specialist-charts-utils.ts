@@ -1,22 +1,20 @@
-import {
-  categoriesTitles,
-  categoriesToRender,
-} from "./ux-specialist-charts-meta";
 import { v4 as uuid } from "uuid";
 import {
   ChartData,
   StateWithName,
   TeamResult,
 } from "./ux-specialist-charts.interface";
-import { createInitialState, State } from "../../../state";
+import { State } from "../../../state";
 import { useEffect } from "react";
 
 export const keysToCheck = ["name", "value"];
 
 export function transformStateDataToChartData(
-  states: StateWithName[]
+  states: Record<string, number | string>[],
+  categories: string[],
+  categoriesTitles: Record<string, string>
 ): ChartData[] {
-  return categoriesToRender.map((category) => {
+  return categories.map((category) => {
     const stateValues = states.reduce(
       (result, state) => {
         result[state.name] = ((state as any)[category] as number) + 1;
@@ -128,4 +126,35 @@ export function usePlusOneInputManager<T extends Record<string, any>>(
       setState(newResults);
     }
   }, [state, keys, setState]);
+}
+
+export function combineStateVariablesIntoCategories(state: State) {
+  const visualInteractionDesigner =
+    state.graphicsAssessment * 0.25 +
+    state.prototypingAssessment * 0.25 +
+    state.uiTheoryAssessment * 0.25 +
+    state.uiAssessment * 0.25;
+
+  const userResearcher =
+    state.dataAnalysisAssessment * 25 +
+    state.researchEvangelistAssessment * 25 +
+    state.conductingResearchAssessment * 25 +
+    state.definingResearchAssessment * 25;
+
+  const uxWriter =
+    state.campaigningAssessment * 0.25 +
+    state.contentManagementAssessment * 0.25 +
+    state.contentStrategyAssessment * 0.25 +
+    state.contentWritingAssessment * 0.25;
+
+  const creativeDeveloper =
+    state.designImplementationAssessment * 0.33 +
+    state.richInteractionAssessment * 0.33 +
+    state.codeUxAdvocateAssessment * 0.33;
+  return {
+    visualInteractionDesigner,
+    userResearcher,
+    uxWriter,
+    creativeDeveloper,
+  };
 }
