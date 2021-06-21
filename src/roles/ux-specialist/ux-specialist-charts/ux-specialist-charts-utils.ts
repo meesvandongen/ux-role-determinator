@@ -8,7 +8,7 @@ import {
   StateWithName,
   TeamResult,
 } from "./ux-specialist-charts.interface";
-import type { State } from "../../../state";
+import { createInitialState, State } from "../../../state";
 import { useEffect } from "react";
 
 export const keysToCheck = ["name", "value"];
@@ -35,6 +35,32 @@ export function transformStateDataToChartData(
   });
 }
 
+export function getAverageStateData<T extends Record<string, number>>(
+  states: T[]
+): T & { name: string } {
+  const startState = (Object.keys(states[0]) as (keyof T)[]).reduce(
+    (zeroState, key) => {
+      // @ts-ignore
+      zeroState[key] = 0;
+      return zeroState;
+    },
+    {} as T
+  );
+
+  const total = states.reduce((total, item) => {
+    (Object.keys(item) as (keyof T)[]).forEach((stateKey) => {
+      // @ts-ignore
+      total[stateKey] += item[stateKey] / states.length;
+    });
+    return total;
+  }, startState);
+
+  return {
+    ...total,
+    name: "Gemiddeld",
+  };
+}
+
 export function isValidTeamResult(result: TeamResult): boolean {
   if (!result.name) {
     return false;
@@ -57,6 +83,12 @@ export function encodeTeamResult(result: State): string {
 
 export function decodeTeamResult(result: string): State {
   return JSON.parse(atob(result));
+}
+
+export function encodedTeamResultsToStates(teamResults: TeamResult[]): State[] {
+  return teamResults
+    .filter(isValidTeamResult)
+    .map((teamResult) => decodeTeamResult(teamResult.value));
 }
 
 export function encodedTeamResultsToStatesWithNames(

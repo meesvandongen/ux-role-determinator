@@ -7,9 +7,8 @@ type CompetencyValuePayloadAction = PayloadAction<{
 
 export type State = ReturnType<typeof state.reducer>;
 
-export const state = createSlice({
-  name: "state",
-  initialState: {
+export function createInitialState() {
+  return {
     // Visual / Interaction Designer
     graphicsAssessment: Competency.noLevelOfCompetency,
     prototypingAssessment: Competency.noLevelOfCompetency,
@@ -29,7 +28,12 @@ export const state = createSlice({
     designImplementationAssessment: Competency.noLevelOfCompetency,
     richInteractionAssessment: Competency.noLevelOfCompetency,
     codeUxAdvocateAssessment: Competency.noLevelOfCompetency,
-  },
+  };
+}
+
+export const state = createSlice({
+  name: "state",
+  initialState: createInitialState(),
   reducers: {
     graphicsAssessmentSliderMoved: (
       state,
