@@ -38,7 +38,7 @@ export function getAverageStateData<T extends Record<string, number>>(
 ): T & { name: string } {
   const startState = (Object.keys(states[0]) as (keyof T)[]).reduce(
     (zeroState, key) => {
-      // @ts-ignore
+      // @ts-expect-error: While this is not entirely type-safe inside this function, the output can be seen as type-safe.
       zeroState[key] = 0;
       return zeroState;
     },
@@ -47,7 +47,7 @@ export function getAverageStateData<T extends Record<string, number>>(
 
   const total = states.reduce((total, item) => {
     (Object.keys(item) as (keyof T)[]).forEach((stateKey) => {
-      // @ts-ignore
+      // @ts-expect-error: While this is not entirely type-safe inside this function, the output can be seen as type-safe.
       total[stateKey] += item[stateKey] / states.length;
     });
     return total;

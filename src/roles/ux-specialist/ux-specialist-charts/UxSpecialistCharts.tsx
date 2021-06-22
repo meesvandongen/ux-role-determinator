@@ -110,7 +110,7 @@ export function UxSpecialistCharts(): JSX.Element {
 
   const data = useMemo(() => {
     const ownData = { ...state, name: "Eigen grafiek data" };
-    const teamData = encodedTeamResultsToStatesWithNames(teamResults);
+    const teamData: Record<string, any>[] = encodedTeamResultsToStatesWithNames(teamResults);
 
     return transformStateDataToChartData(
       [ownData, ...teamData],
