@@ -12,6 +12,10 @@ export function CustomRadar(
       gridShape="circular"
       isInteractive={true}
       enableDots
+      colors={{
+        scheme: "set1",
+      }}
+      fillOpacity={0.1}
       legends={[
         {
           anchor: "top-left",

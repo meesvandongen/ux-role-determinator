@@ -9,6 +9,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.1",
     "@nivo/core": "^0.70.1",
     "@nivo/radar": "^0.70.1",
     "@reduxjs/toolkit": "^1.6.0",
@@ -16,8 +17,10 @@
     "@tailwindcss/typography": "^0.4.1",
     "history": "^5.0.0",
     "kurasu": "^1.1.0",
+    "nightwind": "^1.1.11",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
+    "react-helmet": "^6.1.0",
     "react-redux": "^7.2.4",
     "react-router-dom": "^6.0.0-beta.0",
     "redux": "^4.1.0",
@@ -26,6 +29,7 @@
   "devDependencies": {
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/react-helmet": "^6.1.1",
     "@types/uuid": "^8.3.0",
     "@typescript-eslint/eslint-plugin": "^4.27.0",
     "@typescript-eslint/parser": "^4.27.0",

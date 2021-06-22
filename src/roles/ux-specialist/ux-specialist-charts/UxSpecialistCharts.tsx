@@ -110,7 +110,8 @@ export function UxSpecialistCharts(): JSX.Element {
 
   const data = useMemo(() => {
     const ownData = { ...state, name: "Eigen grafiek data" };
-    const teamData: Record<string, any>[] = encodedTeamResultsToStatesWithNames(teamResults);
+    const teamData: Record<string, any>[] =
+      encodedTeamResultsToStatesWithNames(teamResults);
 
     return transformStateDataToChartData(
       [ownData, ...teamData],
@@ -172,7 +173,7 @@ export function UxSpecialistCharts(): JSX.Element {
       />
 
       <h2>Gecombineerde resultaten per persoon</h2>
-      <div className="h-[300px]">
+      <div className="h-[300px] bg-gray-50 nightwind-prevent rounded">
         <CustomRadar
           data={combinedResults}
           keys={[
@@ -184,7 +185,7 @@ export function UxSpecialistCharts(): JSX.Element {
       </div>
 
       <h2>Resultaten per persoon</h2>
-      <div className="h-[500px]">
+      <div className="h-[500px] bg-gray-50 nightwind-prevent rounded">
         <CustomRadar
           data={data}
           keys={[
@@ -197,7 +198,7 @@ export function UxSpecialistCharts(): JSX.Element {
       </div>
 
       <h2>Gemiddelde resultaten team</h2>
-      <div className="h-[500px]">
+      <div className="h-[500px] bg-gray-50 nightwind-prevent rounded">
         <CustomRadar
           data={averageData}
           keys={["Gemiddeld"]}
