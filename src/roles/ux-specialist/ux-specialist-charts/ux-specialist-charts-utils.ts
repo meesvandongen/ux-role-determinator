@@ -136,10 +136,10 @@ export function combineStateVariablesIntoCategories(state: State) {
     state.uiAssessment * 0.25;
 
   const userResearcher =
-    state.dataAnalysisAssessment * 25 +
-    state.researchEvangelistAssessment * 25 +
-    state.conductingResearchAssessment * 25 +
-    state.definingResearchAssessment * 25;
+    state.dataAnalysisAssessment * 0.25 +
+    state.researchEvangelistAssessment * 0.25 +
+    state.conductingResearchAssessment * 0.25 +
+    state.definingResearchAssessment * 0.25;
 
   const uxWriter =
     state.campaigningAssessment * 0.25 +
