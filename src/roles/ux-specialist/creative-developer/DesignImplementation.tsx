@@ -30,11 +30,11 @@ export function DesignImplementation() {
           <p>
             User stories / projecten uitvoeren (development) binnen frontend
             development stacks in JavaScript en de bekende frameworks
-            (Angular/React/Vue, etc)
+            (Angular/React/Vue, etc).
           </p>
           <p>
             Implementeren en onderhouden van o.a. A/B tests, E2E tests, Unit
-            tests binnen bestaande frameworks/stacks
+            tests binnen bestaande frameworks/stacks.
           </p>
         </>
       }

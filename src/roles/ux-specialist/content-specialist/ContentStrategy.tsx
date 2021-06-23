@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { TaskSection } from "../../../components/TaskSection";
 import { state } from "../../../state";
 
-export function ContentStrategy() {
+export function ContentStrategy(): JSX.Element {
   const assessment = useSelector((state) => state.contentStrategyAssessment);
   const dispatch = useDispatch();
 
@@ -23,11 +23,11 @@ export function ContentStrategy() {
           <p>
             Opstellen van contentstrategie: welke kanalen zet je waarvoor in,
             welke doelgroep bereik je via welk kanaal en welke boodschappen wil
-            je verkondigen
+            je verkondigen.
           </p>
           <p>
             Voeren van overleg met opdrachtgever over de eisen die aan de tekst
-            worden gesteld, bijvoorbeeld op gebied inhoud, doelgroep en omvang
+            worden gesteld, bijvoorbeeld op gebied inhoud, doelgroep en omvang.
           </p>
         </>
       }

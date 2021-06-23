@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { TaskSection } from "../../../components/TaskSection";
 import { state } from "../../../state";
 
-export function Prototyping() {
+export function Prototyping(): JSX.Element {
   const prototypingAssessment = useSelector(
     (state) => state.prototypingAssessment
   );
@@ -30,7 +30,7 @@ export function Prototyping() {
           <p>
             Vertalen van de gebruikerswensen en -doelen naar concrete
             specificaties en eventueel mockups (demonstratie- / testmodellen) en
-            prototypes
+            prototypes.
           </p>
         </>
       }

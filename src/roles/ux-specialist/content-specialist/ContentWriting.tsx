@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { TaskSection } from "../../../components/TaskSection";
 import { state } from "../../../state";
 
-export function ContentWriting() {
+export function ContentWriting(): JSX.Element {
   const assessment = useSelector((state) => state.contentWritingAssessment);
   const dispatch = useDispatch();
 
@@ -24,10 +24,10 @@ export function ContentWriting() {
             Bijdragen aan het creatieve proces in samenwerking met de Creative
             Frontend Developer, User Researcher en Visual/Interaction Designer.
           </p>
-          <p>Creëren van microcopy in de juiste tone of voice</p>
+          <p>Creëren van microcopy in de juiste tone of voice.</p>
           <p>
             Vertalen van de wensen van business naar de juiste copy voor de
-            (eind)gebruiker
+            (eind)gebruiker.
           </p>
         </>
       }

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { TaskSection } from "../../../components/TaskSection";
 import { state } from "../../../state";
 
-export function ContentManagement() {
+export function ContentManagement(): JSX.Element {
   const assessment = useSelector((state) => state.contentManagementAssessment);
   const dispatch = useDispatch();
 
@@ -20,7 +20,7 @@ export function ContentManagement() {
       title="Contentbeheer"
       description={
         <>
-          <p>Content Management in meerdere gangbare CMS systemen</p>
+          <p>Content Management in meerdere gangbare CMS systemen.</p>
           <p>
             Ervoor zorgen dat online uitingen zijn geoptimaliseerd voor
             zoekmachines.
