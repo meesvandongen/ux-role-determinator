@@ -1,5 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Competency } from "./competency";
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 
 type CompetencyValuePayloadAction = PayloadAction<{
   value: Competency;
@@ -124,3 +126,11 @@ export const state = createSlice({
     },
   },
 });
+
+export const persistedStateReducer = persistReducer(
+  {
+    key: state.name,
+    storage: storage,
+  },
+  state.reducer
+);
