@@ -1,18 +1,24 @@
+import { createSelector } from "@reduxjs/toolkit";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { TaskSection } from "../../../components/TaskSection";
-import { state } from "../../../state";
+import { assessmentState } from "../../../state/assessment";
+import { UxSpecialistAssessment } from "../../../state/assessment.types";
+import { uxSpecialistSelector } from "../ux-specialist.selector";
 
-export function RichInteraction() {
-  const assessment = useSelector((state) => state.richInteractionAssessment);
+const selector = createSelector(uxSpecialistSelector, (s) => s.richInteraction);
+
+export function RichInteraction(): JSX.Element {
+  const assessment = useSelector(selector);
   const dispatch = useDispatch();
 
   return (
     <TaskSection
       onSkillAssessmentChange={(newValue) => {
         dispatch(
-          state.actions.richInteractionAssessmentSliderMoved({
-            value: newValue,
+          assessmentState.actions.slideUxSpecialistCompetencyLevel({
+            competency: UxSpecialistAssessment.richInteraction,
+            levelOfCompetency: newValue,
           })
         );
       }}

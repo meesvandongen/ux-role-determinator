@@ -4,7 +4,7 @@ import { Prototyping } from "./Prototyping";
 import { UiTheory } from "./UiTheory";
 import { UserInterface } from "./UserInterface";
 
-export function InteractionDesigner() {
+export function InteractionDesigner(): JSX.Element {
   return (
     <div>
       <h1>Visual and Interaction Designer</h1>

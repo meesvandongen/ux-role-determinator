@@ -1,18 +1,24 @@
+import { createSelector } from "@reduxjs/toolkit";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { TaskSection } from "../../../components/TaskSection";
-import { state } from "../../../state";
+import { assessmentState } from "../../../state/assessment";
+import { UxSpecialistAssessment } from "../../../state/assessment.types";
+import { uxSpecialistSelector } from "../ux-specialist.selector";
+
+const selector = createSelector(uxSpecialistSelector, (s) => s.contentStrategy);
 
 export function ContentStrategy(): JSX.Element {
-  const assessment = useSelector((state) => state.contentStrategyAssessment);
+  const assessment = useSelector(selector);
   const dispatch = useDispatch();
 
   return (
     <TaskSection
       onSkillAssessmentChange={(newValue) => {
         dispatch(
-          state.actions.contentStrategyAssessmentSliderMoved({
-            value: newValue,
+          assessmentState.actions.slideUxSpecialistCompetencyLevel({
+            competency: UxSpecialistAssessment.contentStrategy,
+            levelOfCompetency: newValue,
           })
         );
       }}

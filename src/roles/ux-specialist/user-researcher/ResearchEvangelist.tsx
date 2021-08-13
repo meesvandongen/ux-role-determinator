@@ -1,12 +1,18 @@
+import { createSelector } from "@reduxjs/toolkit";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { TaskSection } from "../../../components/TaskSection";
-import { state } from "../../../state";
+import { assessmentState } from "../../../state/assessment";
+import { UxSpecialistAssessment } from "../../../state/assessment.types";
+import { uxSpecialistSelector } from "../ux-specialist.selector";
 
-export function ResearchEvangelist() {
-  const assessmentValue = useSelector(
-    (state) => state.researchEvangelistAssessment
-  );
+const selector = createSelector(
+  uxSpecialistSelector,
+  (s) => s.researchEvangelist
+);
+
+export function ResearchEvangelist(): JSX.Element {
+  const assessmentValue = useSelector(selector);
   const dispatch = useDispatch();
 
   return (
@@ -14,8 +20,9 @@ export function ResearchEvangelist() {
       skillAssessmentValue={assessmentValue}
       onSkillAssessmentChange={(newValue) => {
         dispatch(
-          state.actions.researchEvangelistAssessmentSliderMoved({
-            value: newValue,
+          assessmentState.actions.slideUxSpecialistCompetencyLevel({
+            competency: UxSpecialistAssessment.researchEvangelist,
+            levelOfCompetency: newValue,
           })
         );
       }}

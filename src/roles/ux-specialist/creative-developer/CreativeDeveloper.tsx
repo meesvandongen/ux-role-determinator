@@ -3,7 +3,7 @@ import { CodeUxAdvocate } from "./CodeUxAdvocate";
 import { DesignImplementation } from "./DesignImplementation";
 import { RichInteraction } from "./RichInteraction";
 
-export function CreativeDeveloper() {
+export function CreativeDeveloper(): JSX.Element {
   return (
     <div>
       <h1>Creative Developer</h1>

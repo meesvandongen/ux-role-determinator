@@ -1,18 +1,24 @@
+import { createSelector } from "@reduxjs/toolkit";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { TaskSection } from "../../../components/TaskSection";
-import { state } from "../../../state";
+import { assessmentState } from "../../../state/assessment";
+import { UxSpecialistAssessment } from "../../../state/assessment.types";
+import { uxSpecialistSelector } from "../ux-specialist.selector";
 
-export function UiTheory() {
-  const uiTheoryAssessment = useSelector((state) => state.uiTheoryAssessment);
+const selector = createSelector(uxSpecialistSelector, (s) => s.uiTheory);
+
+export function UiTheory(): JSX.Element {
+  const uiTheoryAssessment = useSelector(selector);
   const dispatch = useDispatch();
 
   return (
     <TaskSection
       onSkillAssessmentChange={(newValue) => {
         dispatch(
-          state.actions.uiTheoryAssessmentSliderMoved({
-            value: newValue,
+          assessmentState.actions.slideUxSpecialistCompetencyLevel({
+            competency: UxSpecialistAssessment.uiTheory,
+            levelOfCompetency: newValue,
           })
         );
       }}

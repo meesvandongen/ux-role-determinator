@@ -1,4 +1,4 @@
-import { State } from "../state";
+import { State } from "../state/root-state";
 
 declare module "react-redux" {
   export function useSelector<TState, TSelected>(

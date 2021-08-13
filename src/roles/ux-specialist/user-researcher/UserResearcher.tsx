@@ -4,7 +4,7 @@ import { DataAnalysis } from "./DataAnalysis";
 import { DefiningResearch } from "./DefiningResearch";
 import { ResearchEvangelist } from "./ResearchEvangelist";
 
-export function UserResearcher() {
+export function UserResearcher(): JSX.Element {
   return (
     <div>
       <h1>User Researcher</h1>

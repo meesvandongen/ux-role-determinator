@@ -4,7 +4,7 @@ import {
   StateWithName,
   TeamResult,
 } from "./ux-specialist-charts.interface";
-import { State } from "../../../state";
+import { State } from "../../../state/root-state";
 import { useEffect } from "react";
 
 export const keysToCheck = ["name", "value"];

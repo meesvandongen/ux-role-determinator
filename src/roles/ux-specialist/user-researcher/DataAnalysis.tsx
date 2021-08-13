@@ -1,22 +1,29 @@
+import { createSelector } from "@reduxjs/toolkit";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { TaskSection } from "../../../components/TaskSection";
-import { state } from "../../../state";
+import { assessmentState } from "../../../state/assessment";
+import { UxSpecialistAssessment } from "../../../state/assessment.types";
+import { uxSpecialistSelector } from "../ux-specialist.selector";
 
-export function DataAnalysis() {
-  const dataAnalysis = useSelector((state) => state.dataAnalysisAssessment);
+const selector = createSelector(uxSpecialistSelector, (s) => s.dataAnalysis);
+
+export function DataAnalysis(): JSX.Element {
+  const dataAnalysis = useSelector(selector);
   const dispatch = useDispatch();
 
   return (
     <TaskSection
-    skillAssessmentValue={dataAnalysis}
-    onSkillAssessmentChange={(newValue) => {
-      dispatch(
-        state.actions.dataAnalysisAssessmentSliderMoved({
-          value: newValue,
-        })
-      )
-    }}
+      skillAssessmentValue={dataAnalysis}
+      onSkillAssessmentChange={(newValue) => {
+        dispatch(
+          assessmentState.actions.slideUxSpecialistCompetencyLevel({
+            competency: UxSpecialistAssessment.dataAnalysis,
+
+            levelOfCompetency: newValue,
+          })
+        );
+      }}
       title="Data analyseren & interpreteren"
       description={
         <>

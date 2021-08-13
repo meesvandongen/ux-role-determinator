@@ -16,7 +16,7 @@ import {
   usePlusOneInputManager,
 } from "./ux-specialist-charts-utils";
 import { CustomRadar } from "../../../components/CustomRadar";
-import { State } from "../../../state";
+import { State } from "../../../state/root-state";
 import {
   categoriesTitles,
   categoriesToRender,

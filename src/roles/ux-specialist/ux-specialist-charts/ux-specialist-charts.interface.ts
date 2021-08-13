@@ -1,4 +1,4 @@
-import { State } from "../../../state";
+import { State } from "../../../state/root-state";
 
 export interface StateWithName extends State {
   name: string;

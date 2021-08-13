@@ -4,7 +4,7 @@ import { ContentManagement } from "./ContentManagement";
 import { ContentStrategy } from "./ContentStrategy";
 import { ContentWriting } from "./ContentWriting";
 
-export function ContentSpecialist() {
+export function ContentSpecialist(): JSX.Element {
   return (
     <div>
       <h1>Writer/Content Specialist</h1>

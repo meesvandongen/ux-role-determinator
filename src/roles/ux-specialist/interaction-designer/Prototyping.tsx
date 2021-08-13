@@ -1,20 +1,24 @@
+import { createSelector } from "@reduxjs/toolkit";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { TaskSection } from "../../../components/TaskSection";
-import { state } from "../../../state";
+import { assessmentState } from "../../../state/assessment";
+import { UxSpecialistAssessment } from "../../../state/assessment.types";
+import { uxSpecialistSelector } from "../ux-specialist.selector";
+
+const selector = createSelector(uxSpecialistSelector, (s) => s.prototyping);
 
 export function Prototyping(): JSX.Element {
-  const prototypingAssessment = useSelector(
-    (state) => state.prototypingAssessment
-  );
+  const prototypingAssessment = useSelector(selector);
   const dispatch = useDispatch();
 
   return (
     <TaskSection
       onSkillAssessmentChange={(newValue) => {
         dispatch(
-          state.actions.prototypingAssessmentSliderMoved({
-            value: newValue,
+          assessmentState.actions.slideUxSpecialistCompetencyLevel({
+            competency: UxSpecialistAssessment.prototyping,
+            levelOfCompetency: newValue,
           })
         );
       }}

@@ -1,18 +1,24 @@
+import { createSelector } from "@reduxjs/toolkit";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { TaskSection } from "../../../components/TaskSection";
-import { state } from "../../../state";
+import { assessmentState } from "../../../state/assessment";
+import { UxSpecialistAssessment } from "../../../state/assessment.types";
+import { uxSpecialistSelector } from "../ux-specialist.selector";
 
-export function Graphics() {
-  const graphicsAssessment = useSelector((state) => state.graphicsAssessment);
+const selector = createSelector(uxSpecialistSelector, (s) => s.graphics);
+
+export function Graphics(): JSX.Element {
+  const graphicsAssessment = useSelector(selector);
   const dispatch = useDispatch();
 
   return (
     <TaskSection
       onSkillAssessmentChange={(newValue) => {
         dispatch(
-          state.actions.graphicsAssessmentSliderMoved({
-            value: newValue,
+          assessmentState.actions.slideUxSpecialistCompetencyLevel({
+            competency: UxSpecialistAssessment.graphics,
+            levelOfCompetency: newValue,
           })
         );
       }}
