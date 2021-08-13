@@ -4,8 +4,8 @@ import {
   StateWithName,
   TeamResult,
 } from "./ux-specialist-charts.interface";
-import { State } from "../../../state/root-state";
 import { useEffect } from "react";
+import { AssessmentState } from "../../../state/assessment.types";
 
 export const keysToCheck = ["name", "value"];
 
@@ -75,15 +75,15 @@ export function createNewTeamResult(): TeamResult {
   return { key: uuid(), value: "", name: "" };
 }
 
-export function encodeTeamResult(result: State): string {
+export function encodeTeamResult(result: AssessmentState['uxSpecialist']): string {
   return btoa(JSON.stringify(result));
 }
 
-export function decodeTeamResult(result: string): State {
+export function decodeTeamResult(result: string): AssessmentState['uxSpecialist'] {
   return JSON.parse(atob(result));
 }
 
-export function encodedTeamResultsToStates(teamResults: TeamResult[]): State[] {
+export function encodedTeamResultsToStates(teamResults: TeamResult[]): AssessmentState['uxSpecialist'][] {
   return teamResults
     .filter(isValidTeamResult)
     .map((teamResult) => decodeTeamResult(teamResult.value));
@@ -128,29 +128,31 @@ export function usePlusOneInputManager<T extends Record<string, any>>(
   }, [state, keys, setState]);
 }
 
-export function combineStateVariablesIntoCategories(state: State) {
+export function combineStateVariablesIntoCategories(
+  state: AssessmentState["uxSpecialist"]
+) {
   const visualInteractionDesigner =
-    state.graphicsAssessment * 0.25 +
-    state.prototypingAssessment * 0.25 +
-    state.uiTheoryAssessment * 0.25 +
-    state.uiAssessment * 0.25;
+    state.graphics * 0.25 +
+    state.prototyping * 0.25 +
+    state.uiTheory * 0.25 +
+    state.ui * 0.25;
 
   const userResearcher =
-    state.dataAnalysisAssessment * 0.25 +
-    state.researchEvangelistAssessment * 0.25 +
-    state.conductingResearchAssessment * 0.25 +
-    state.definingResearchAssessment * 0.25;
+    state.dataAnalysis * 0.25 +
+    state.researchEvangelist * 0.25 +
+    state.conductingResearch * 0.25 +
+    state.definingResearch * 0.25;
 
   const uxWriter =
-    state.campaigningAssessment * 0.25 +
-    state.contentManagementAssessment * 0.25 +
-    state.contentStrategyAssessment * 0.25 +
-    state.contentWritingAssessment * 0.25;
+    state.campaigning * 0.25 +
+    state.contentManagement * 0.25 +
+    state.contentStrategy * 0.25 +
+    state.contentWriting * 0.25;
 
   const creativeDeveloper =
-    state.designImplementationAssessment * 0.33 +
-    state.richInteractionAssessment * 0.33 +
-    state.codeUxAdvocateAssessment * 0.33;
+    state.designImplementation * 0.33 +
+    state.richInteraction * 0.33 +
+    state.codeUxAdvocate * 0.33;
   return {
     visualInteractionDesigner,
     userResearcher,

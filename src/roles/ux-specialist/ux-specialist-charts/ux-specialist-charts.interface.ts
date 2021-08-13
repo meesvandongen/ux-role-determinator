@@ -1,6 +1,6 @@
-import { State } from "../../../state/root-state";
+import { AssessmentState } from "../../../state/assessment.types";
 
-export interface StateWithName extends State {
+export type StateWithName = AssessmentState['uxSpecialist'] & {
   name: string;
 }
 

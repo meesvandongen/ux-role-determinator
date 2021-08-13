@@ -16,13 +16,13 @@ import {
   usePlusOneInputManager,
 } from "./ux-specialist-charts-utils";
 import { CustomRadar } from "../../../components/CustomRadar";
-import { State } from "../../../state/root-state";
 import {
   categoriesTitles,
   categoriesToRender,
   combinedCategoriesTitles,
   combinedCategoriesToRender,
 } from "./ux-specialist-charts-meta";
+import { AssessmentState } from "../../../state/assessment.types";
 
 interface UxTeamResultsProps {
   teamResults: TeamResult[];
@@ -102,7 +102,7 @@ export function UxTeamResults({
 }
 
 export function UxSpecialistCharts(): JSX.Element {
-  const state = useSelector((state) => state);
+  const state = useSelector((state) => state.assessment.uxSpecialist);
 
   const [teamResults, setTeamResults] = useState<TeamResult[]>(() => [
     createNewTeamResult(),
@@ -121,7 +121,7 @@ export function UxSpecialistCharts(): JSX.Element {
   }, [state, teamResults]);
 
   const averageData = useMemo(() => {
-    const allResults: State[] = [
+    const allResults: Array<AssessmentState['uxSpecialist']> = [
       state,
       ...encodedTeamResultsToStates(teamResults),
     ];
