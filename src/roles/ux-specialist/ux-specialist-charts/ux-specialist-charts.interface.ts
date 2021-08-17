@@ -1,8 +1,8 @@
 import { AssessmentState } from "../../../state/assessment.types";
 
-export type StateWithName = AssessmentState['uxSpecialist'] & {
+export type StateWithName = AssessmentState["uxSpecialist"] & {
   name: string;
-}
+};
 
 export interface TeamResult {
   key: string;

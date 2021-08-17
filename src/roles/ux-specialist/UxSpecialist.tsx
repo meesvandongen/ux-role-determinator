@@ -9,6 +9,20 @@ import { UxSpecialistCharts } from "./ux-specialist-charts/UxSpecialistCharts";
 export function UxSpecialist() {
   return (
     <>
+      <div>
+        <h1>UX Specialist</h1>
+        <p>
+          De UX specialist heeft expertise op bepaalde gebieden van User
+          Experience Design. De volgende gebieden vallen onder de UX specialist
+          rol:
+        </p>
+        <ul>
+          <li>Creative Developer</li>
+          <li>Interaction Designer</li>
+          <li>User Researcher</li>
+          <li>Content Specialist</li>
+        </ul>
+      </div>
       <CreativeDeveloper />
       <InteractionDesigner />
       <UserResearcher />
