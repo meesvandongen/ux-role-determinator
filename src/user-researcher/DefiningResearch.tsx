@@ -14,22 +14,22 @@ export function DefiningResearch(): JSX.Element {
       }}
       title="Onderzoek definiëren"
       description={
-        <>
-          <p>
+        <ul>
+          <li>
             Iteratief verbeteren van de customer journey als onderdeel van ‘het
             development team’
-          </p>
-          <p>
+          </li>
+          <li>
             Actief bijdragen aan optimalisaties op het gebied van conversie /
             leads
-          </p>
-          <p>
+          </li>
+          <li>
             Bepalen van de doelgroep door middel van onder andere user story’s
             en persona’s
-          </p>
-          <p>Het ontwerpen van tests (Usability tests, A/B)</p>
-          <p>Kwantitatieve en kwalitatieve onderzoeken definiëren.</p>
-        </>
+          </li>
+          <li>Het ontwerpen van tests (Usability tests, A/B)</li>
+          <li>Kwantitatieve en kwalitatieve onderzoeken definiëren.</li>
+        </ul>
       }
     />
   );

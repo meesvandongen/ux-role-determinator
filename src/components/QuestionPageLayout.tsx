@@ -31,7 +31,9 @@ export function QuestionPageLayout({
         </div>
       </div>
       <div className="bg-[rgb(17,11,25)] text-purple-50" id="vragenlijst">
-        <div className="space-y-32 py-32">{questions}</div>
+        <div className="grid-cols-[1fr,auto,1fr] grid items-center gap-y-12 gap-x-8 py-32">
+          {questions}
+        </div>
       </div>
     </div>
   );

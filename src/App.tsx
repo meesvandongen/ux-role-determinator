@@ -5,6 +5,7 @@ import { UserResearcher } from "./user-researcher/UserResearcher";
 import { InteractionDesigner } from "./interaction-designer/InteractionDesigner";
 import { ContentSpecialist } from "./content-specialist/ContentSpecialist";
 import { CreativeDeveloper } from "./creative-developer/CreativeDeveloper";
+import { Home } from "./Home";
 
 function App(): JSX.Element {
   return (
@@ -15,6 +16,7 @@ function App(): JSX.Element {
         <Route path="developer" element={<CreativeDeveloper />} />
         <Route path="interaction-designer" element={<InteractionDesigner />} />
         <Route path="user-researcher" element={<UserResearcher />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );
