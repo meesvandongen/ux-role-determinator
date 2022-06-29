@@ -23,7 +23,6 @@ export function CodeUxAdvocate(): JSX.Element {
           </p>
         </>
       }
-      keywords={["Functional Accessibility"]}
     />
   );
 }

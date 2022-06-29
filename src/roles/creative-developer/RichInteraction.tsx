@@ -19,7 +19,6 @@ export function RichInteraction(): JSX.Element {
           (micro)animaties / gedrag in o.a. JavaScript.
         </p>
       }
-      keywords={["Digital graphics (SVG / Canvas)", "Motion design"]}
     />
   );
 }

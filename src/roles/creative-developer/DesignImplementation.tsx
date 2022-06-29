@@ -31,16 +31,6 @@ export function DesignImplementation(): JSX.Element {
           </p>
         </>
       }
-      keywords={[
-        "Typescript, JavaScript",
-        "Frameworks (Angular/React/Vue/Mobile/etc.)",
-        "Design Systems",
-        "HTML",
-        "CSS",
-        "Testing (A/B, Unit, E2E)",
-        "Browser skills",
-        "Debugging",
-      ]}
     />
   );
 }
