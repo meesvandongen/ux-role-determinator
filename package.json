@@ -1,8 +1,11 @@
 {
   "version": "0.0.1",
   "description": "",
-  "repository": {},
+  "repository": {
+    "url": "https://github.com/meesvandongen/ux-role-determinator"
+  },
   "license": "MIT",
+  "name": "ux-role-determinator",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
