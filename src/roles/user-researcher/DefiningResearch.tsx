@@ -1,30 +1,16 @@
-import { createSelector } from "@reduxjs/toolkit";
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { TaskSection } from "../../../components/TaskSection";
-import { assessmentState } from "../../../state/assessment";
-import { UxSpecialistAssessment } from "../../../state/assessment.types";
-import { uxSpecialistSelector } from "../ux-specialist.selector";
-
-const selector = createSelector(
-  uxSpecialistSelector,
-  (s) => s.definingResearch
-);
+import { useSnapshot } from "valtio";
+import { TaskSection } from "../../components/TaskSection";
+import { selfAssessmentState } from "../../state";
 
 export function DefiningResearch(): JSX.Element {
-  const assessmentValue = useSelector(selector);
-  const dispatch = useDispatch();
+  const selfAssessmentSnapshot = useSnapshot(selfAssessmentState);
 
   return (
     <TaskSection
-      skillAssessmentValue={assessmentValue}
+      skillAssessmentValue={selfAssessmentSnapshot.definingResearch}
       onSkillAssessmentChange={(newValue) => {
-        dispatch(
-          assessmentState.actions.slideUxSpecialistCompetencyLevel({
-            competency: UxSpecialistAssessment.definingResearch,
-            levelOfCompetency: newValue,
-          })
-        );
+        selfAssessmentState.definingResearch = newValue;
       }}
       title="Onderzoek definiëren"
       description={

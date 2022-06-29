@@ -1,29 +1,17 @@
-import { createSelector } from "@reduxjs/toolkit";
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { TaskSection } from "../../../components/TaskSection";
-import { assessmentState } from "../../../state/assessment";
-import { UxSpecialistAssessment } from "../../../state/assessment.types";
-import { uxSpecialistSelector } from "../ux-specialist.selector";
-
-const selector = createSelector(uxSpecialistSelector, (s) => s.contentWriting);
-
+import { useSnapshot } from "valtio";
+import { TaskSection } from "../../components/TaskSection";
+import { selfAssessmentState } from "../../state";
 
 export function ContentWriting(): JSX.Element {
-  const assessment = useSelector(selector);
-  const dispatch = useDispatch();
+  const selfAssessmentSnapshot = useSnapshot(selfAssessmentState);
 
   return (
     <TaskSection
       onSkillAssessmentChange={(newValue) => {
-        dispatch(
-          assessmentState.actions.slideUxSpecialistCompetencyLevel({
-            competency: UxSpecialistAssessment.contentWriting,
-            levelOfCompetency: newValue,
-          })
-        );
+        selfAssessmentState.contentWriting = newValue;
       }}
-      skillAssessmentValue={assessment}
+      skillAssessmentValue={selfAssessmentSnapshot.contentWriting}
       title="Content schrijven"
       description={
         <>

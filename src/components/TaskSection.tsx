@@ -1,18 +1,40 @@
 import React from "react";
 import kurasu from "kurasu";
-import { Competency, competencyTranslations } from "../competency";
 import { FlexSpacer } from "./FlexSpacer";
 
 const Keyword = kurasu.span(
   "italic bg-gray-100 py-1 px-2 rounded text-sm mr-2 mb-2"
 );
 
+function SkillAssessmentDescription({ value }: { value: number | "unset" }) {
+  if (value === 0) {
+    return <>Geen ervaring</>;
+  }
+  if (value === 1) {
+    return <>Laag niveau</>;
+  }
+  if (value === 2) {
+    return <>Gemiddeld niveau</>;
+  }
+  if (value === 3) {
+    return <>Tamelijk hoog niveau</>;
+  }
+  if (value === 4) {
+    return <>Hoog niveau</>;
+  }
+  if (value === "unset") {
+    return <>Niet beoordeeld</>;
+  }
+
+  return <></>;
+}
+
 interface TaskSectionProps {
   title: string;
   description: React.ReactNode;
   keywords?: string[];
-  skillAssessmentValue: Competency;
-  onSkillAssessmentChange: (value: Competency) => void;
+  skillAssessmentValue: number | "unset";
+  onSkillAssessmentChange: (value: number | "unset") => void;
 }
 export function TaskSection({
   title,
@@ -22,7 +44,7 @@ export function TaskSection({
   onSkillAssessmentChange,
 }: TaskSectionProps): JSX.Element {
   return (
-    <>
+    <div className="prose prose-invert prose-purple">
       <h3>{title}</h3>
       {description}
       <div>
@@ -30,7 +52,7 @@ export function TaskSection({
           <label className="text-sm italic" htmlFor={title}>
             {title} vaardigheidsbeoordeeling:{" "}
             <span className="font-medium">
-              {competencyTranslations[skillAssessmentValue]}
+              <SkillAssessmentDescription value={skillAssessmentValue} />
             </span>
           </label>
           <input
@@ -48,11 +70,11 @@ export function TaskSection({
         </div>
         <div className="flex">
           <span className="text-xs text-gray-500 uppercase">
-            {competencyTranslations[Competency.noLevelOfCompetency]}
+            <SkillAssessmentDescription value={0} />
           </span>
           <FlexSpacer />
           <span className="text-xs text-gray-500 uppercase">
-            {competencyTranslations[Competency.highLevelOfCompetency]}
+            <SkillAssessmentDescription value={4} />
           </span>
         </div>
       </div>
@@ -66,6 +88,6 @@ export function TaskSection({
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }

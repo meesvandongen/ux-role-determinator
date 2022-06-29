@@ -1,28 +1,16 @@
-import { createSelector } from "@reduxjs/toolkit";
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { TaskSection } from "../../../components/TaskSection";
-import { assessmentState } from "../../../state/assessment";
-import { UxSpecialistAssessment } from "../../../state/assessment.types";
-import { uxSpecialistSelector } from "../ux-specialist.selector";
-
-const selector = createSelector(uxSpecialistSelector, (s) => s.dataAnalysis);
+import { useSnapshot } from "valtio";
+import { TaskSection } from "../../components/TaskSection";
+import { selfAssessmentState } from "../../state";
 
 export function DataAnalysis(): JSX.Element {
-  const dataAnalysis = useSelector(selector);
-  const dispatch = useDispatch();
+  const selfAssessmentSnapshot = useSnapshot(selfAssessmentState);
 
   return (
     <TaskSection
-      skillAssessmentValue={dataAnalysis}
+      skillAssessmentValue={selfAssessmentSnapshot.dataAnalysis}
       onSkillAssessmentChange={(newValue) => {
-        dispatch(
-          assessmentState.actions.slideUxSpecialistCompetencyLevel({
-            competency: UxSpecialistAssessment.dataAnalysis,
-
-            levelOfCompetency: newValue,
-          })
-        );
+        selfAssessmentState.dataAnalysis = newValue;
       }}
       title="Data analyseren & interpreteren"
       description={
