@@ -1,4 +1,5 @@
 import { proxy } from "valtio";
+import { watch } from "valtio/utils";
 
 interface SelfAssessment {
   // VisualInteractionDesignerAssessment
@@ -22,24 +23,39 @@ interface SelfAssessment {
   codeUxAdvocate: "unset" | number;
 }
 
-export const selfAssessmentState = proxy<SelfAssessment>({
-  // VisualInteractionDesignerAssessment
-  graphics: "unset",
-  prototyping: "unset",
-  uiTheory: "unset",
-  ui: "unset",
-  // UserResearcherAssessment
-  dataAnalysis: "unset",
-  researchEvangelist: "unset",
-  conductingResearch: "unset",
-  definingResearch: "unset",
-  // UxWriterAssessment
-  campaigning: "unset",
-  contentManagement: "unset",
-  contentStrategy: "unset",
-  contentWriting: "unset",
-  // CreativeDeveloperAssessment
-  designImplementation: "unset",
-  richInteraction: "unset",
-  codeUxAdvocate: "unset",
+const initialState: SelfAssessment = (() => {
+  const str = localStorage.getItem("selfAssessmentState");
+  if (str) {
+    return JSON.parse(str);
+  }
+  return {
+    // VisualInteractionDesignerAssessment
+    graphics: "unset",
+    prototyping: "unset",
+    uiTheory: "unset",
+    ui: "unset",
+    // UserResearcherAssessment
+    dataAnalysis: "unset",
+    researchEvangelist: "unset",
+    conductingResearch: "unset",
+    definingResearch: "unset",
+    // UxWriterAssessment
+    campaigning: "unset",
+    contentManagement: "unset",
+    contentStrategy: "unset",
+    contentWriting: "unset",
+    // CreativeDeveloperAssessment
+    designImplementation: "unset",
+    richInteraction: "unset",
+    codeUxAdvocate: "unset",
+  };
+})();
+
+export const selfAssessmentState = proxy<SelfAssessment>(initialState);
+
+watch((get) => {
+  localStorage.setItem(
+    "selfAssessmentState",
+    JSON.stringify(get(selfAssessmentState))
+  );
 });
