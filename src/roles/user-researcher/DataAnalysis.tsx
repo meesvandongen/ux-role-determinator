@@ -27,7 +27,6 @@ export function DataAnalysis(): JSX.Element {
           </p>
         </>
       }
-      keywords={["Persona", "User journey mapping"]}
     />
   );
 }

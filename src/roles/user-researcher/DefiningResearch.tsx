@@ -31,7 +31,6 @@ export function DefiningResearch(): JSX.Element {
           <p>Kwantitatieve en kwalitatieve onderzoeken definiëren.</p>
         </>
       }
-      keywords={["Onderzoeksdoelen bepalen", "brainstormen"]}
     />
   );
 }

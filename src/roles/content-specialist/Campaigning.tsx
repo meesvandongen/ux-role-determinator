@@ -22,7 +22,6 @@ export function Campaigning(): JSX.Element {
           <p>Uitvoeren van e-mailcampagnes</p>
         </>
       }
-      keywords={["Social platforms", "Marketing"]}
     />
   );
 }

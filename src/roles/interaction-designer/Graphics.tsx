@@ -12,14 +12,7 @@ export function Graphics(): JSX.Element {
         selfAssessmentState.graphics = newValue;
       }}
       skillAssessmentValue={selfAssessmentSnapshot.graphics}
-      keywords={[
-        "Grafische vormgeving",
-        "Illustratie",
-        "Kleurtheorie",
-        "Iconography",
-        "Typography",
-        "Branding",
-      ]}
+
       title="Graphics"
       description={
         <p>

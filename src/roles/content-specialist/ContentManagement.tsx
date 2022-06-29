@@ -23,11 +23,7 @@ export function ContentManagement(): JSX.Element {
           <p>verspreiden en vindbaar maken van digitale content.</p>
         </>
       }
-      keywords={[
-        "Content management systemen (AEM, Wordpress, etc)",
-        "Basiskennis SEO",
-        "Basiskennis HTML",
-      ]}
+   
     />
   );
 }

@@ -12,7 +12,6 @@ export function Prototyping(): JSX.Element {
         selfAssessmentState.prototyping = newValue;
       }}
       skillAssessmentValue={selfAssessmentSnapshot.prototyping}
-      keywords={["Wireframing", "Mock-ups"]}
       title="Prototyping"
       description={
         <>

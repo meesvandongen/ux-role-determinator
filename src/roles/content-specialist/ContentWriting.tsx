@@ -26,15 +26,7 @@ export function ContentWriting(): JSX.Element {
           </p>
         </>
       }
-      keywords={[
-        "Pyramide schrijven",
-        "Tone of Voice",
-        "Empatisch schrijven",
-        "Talenkennis (Engels, Nederlands)",
-        "Combineren beeld & tekst",
-        "Copywriting",
-        "e-commerce",
-      ]}
+
     />
   );
 }

@@ -12,14 +12,7 @@ export function UserInterface(): JSX.Element {
         selfAssessmentState.ui = newValue;
       }}
       skillAssessmentValue={selfAssessmentSnapshot.ui}
-      keywords={[
-        "Interaction Design",
-        "Ontwikkeling & Implementatie Design systems",
-        "Layout & Compositie",
-        "Visual Accessibilty",
-        "Design systems",
-        "Layout/composition",
-      ]}
+
       title="User Interface"
       description={
         <>
