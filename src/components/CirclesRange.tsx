@@ -21,7 +21,7 @@ export function CirclesRange({
   return (
     <div className="flex justify-between">
       {circles.map((i) => (
-        <label key={i} className="block flex">
+        <label key={i} className="flex cursor-pointer">
           <input
             className="invisible peer h-0 w-0"
             type="radio"
