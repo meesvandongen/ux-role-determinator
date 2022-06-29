@@ -1,7 +1,7 @@
 import React from "react";
-import { TaskSection } from "../../components/TaskSection";
+import { TaskSection } from "../components/TaskSection";
 import { useSnapshot } from "valtio";
-import { selfAssessmentState } from "../../state";
+import { selfAssessmentState } from "../state";
 
 export function Campaigning(): JSX.Element {
   const selfAssessmentSnapshot = useSnapshot(selfAssessmentState);

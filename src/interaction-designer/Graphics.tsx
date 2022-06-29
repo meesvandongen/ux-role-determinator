@@ -1,7 +1,7 @@
 import React from "react";
 import { useSnapshot } from "valtio";
-import { TaskSection } from "../../components/TaskSection";
-import { selfAssessmentState } from "../../state";
+import { TaskSection } from "../components/TaskSection";
+import { selfAssessmentState } from "../state";
 
 export function Graphics(): JSX.Element {
   const selfAssessmentSnapshot = useSnapshot(selfAssessmentState);
@@ -12,7 +12,6 @@ export function Graphics(): JSX.Element {
         selfAssessmentState.graphics = newValue;
       }}
       skillAssessmentValue={selfAssessmentSnapshot.graphics}
-
       title="Graphics"
       description={
         <p>

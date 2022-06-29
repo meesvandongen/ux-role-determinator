@@ -1,7 +1,7 @@
 import React from "react";
 import { useSnapshot } from "valtio";
-import { TaskSection } from "../../components/TaskSection";
-import { selfAssessmentState } from "../../state";
+import { TaskSection } from "../components/TaskSection";
+import { selfAssessmentState } from "../state";
 
 export function ContentManagement(): JSX.Element {
   const selfAssessmentSnapshot = useSnapshot(selfAssessmentState);

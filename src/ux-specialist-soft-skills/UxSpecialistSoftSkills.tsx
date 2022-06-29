@@ -1,6 +1,6 @@
 import React from "react";
 
-export function UxSpecialistSoftSkills() {
+export function UxSpecialistSoftSkills(): JSX.Element {
   return (
     <div>
       <h1>Soft Skills</h1>
