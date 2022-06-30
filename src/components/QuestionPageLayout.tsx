@@ -26,7 +26,7 @@ export function QuestionPageLayout({
             Start
           </a>
         </div>
-        <div className="w-full h-full min-h-[400px] bg-blue-100 row-start-1 md:row-start-auto">
+        <div className="w-full h-full min-h-[400px] from-blue-50 to-blue-200 bg-gradient-radial row-start-1 md:row-start-auto">
           {three}
         </div>
       </div>

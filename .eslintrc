@@ -19,5 +19,6 @@
     "sourceType": "module"
   },
   "plugins": ["react"],
-  "rules": {}
+  "rules": {},
+  "ignorePatterns": ["node_modules/", "dist/", "tailwind.config.js"]
 }
