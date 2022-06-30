@@ -1,9 +1,11 @@
 import React from "react";
 import { Graphics } from "./Graphics";
+import { Icon } from "./Icon";
 import { Prototyping } from "./Prototyping";
 import { UiTheory } from "./UiTheory";
 import { UserInterface } from "./UserInterface";
 import { QuestionPageLayout } from "../components/QuestionPageLayout";
+import { IconCanvas } from "./IconCanvas";
 
 export function InteractionDesigner(): JSX.Element {
   return (
@@ -28,7 +30,7 @@ export function InteractionDesigner(): JSX.Element {
           <UiTheory />
         </>
       }
-      three={"placeholder"}
+      three={<IconCanvas />}
     />
   );
 }
