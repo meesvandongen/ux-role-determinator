@@ -2,11 +2,12 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-body {
+#root {
   @apply bg-gray-50 flex flex-col;
 }
 
 html,
-body {
+body,
+#root {
   @apply h-full;
 }

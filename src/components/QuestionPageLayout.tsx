@@ -1,4 +1,5 @@
 import React from "react";
+import { IconCanvas } from "./IconCanvas";
 
 interface QuestionPageLayoutProps {
   questions: React.ReactNode;
@@ -27,7 +28,7 @@ export function QuestionPageLayout({
           </a>
         </div>
         <div className="w-full h-full min-h-[400px] from-blue-50 to-blue-200 bg-gradient-radial row-start-1 md:row-start-auto">
-          {three}
+          <IconCanvas>{three}</IconCanvas>
         </div>
       </div>
       <div className="bg-[rgb(17,11,25)] text-purple-50" id="vragenlijst">
