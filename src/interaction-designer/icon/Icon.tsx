@@ -19,6 +19,7 @@ type GLTFResult = GLTF & {
 
 export function Icon(): JSX.Element {
   const group = useRef<THREE.Group>(null);
+  const group2 = useRef<THREE.Group>(null);
   const { nodes, materials } = useGLTF(iconURL) as GLTFResult;
   const camera = useThree((state) => state.camera);
 
@@ -27,7 +28,7 @@ export function Icon(): JSX.Element {
   }, [camera]);
 
   useFrame((state) => {
-    if (!group.current) {
+    if (!group.current || !group2.current) {
       return;
     }
     const t = state.clock.getElapsedTime();
@@ -35,18 +36,26 @@ export function Icon(): JSX.Element {
     group.current.rotation.y = Math.sin(t / 4) / 8;
     group.current.rotation.z = (1 + Math.sin(t / 1.5)) / 20;
     group.current.position.y = (1 + Math.sin(t / 1.5)) / 10;
+
+    group2.current.rotation.x = -Math.PI / 1.75 + Math.cos(t / 4) / 4;
+    group2.current.rotation.y = Math.sin(t / 4) / 4;
+    group2.current.rotation.z = (1 + Math.sin(t / 1.5)) / 10;
+    group2.current.position.y = (1 + Math.sin(t / 1.5)) / 5;
   });
 
   return (
     <>
       <pointLight position={[1, 1, 5]} color={0xcbd9ea} intensity={1.5} />
-      <group position={[0, 2, 0]} rotation={[Math.PI / 2, 0, Math.PI / 3]}>
-        <group ref={group} dispose={null}>
+      <group position={[0, 2, 0]} rotation={[Math.PI * 0.5, 0, Math.PI * 1.5]}>
+        <group ref={group2} dispose={null}>
           <mesh
             geometry={nodes.pen.geometry}
             material={materials.pen}
             scale={0.9}
+            position={[-0.5, 0, 0]}
           />
+        </group>
+        <group ref={group} dispose={null}>
           <mesh
             geometry={nodes.ruler.geometry}
             material={materials.ruler}
