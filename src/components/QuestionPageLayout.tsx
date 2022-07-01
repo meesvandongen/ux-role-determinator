@@ -16,8 +16,8 @@ export function QuestionPageLayout({
 }: QuestionPageLayoutProps): JSX.Element {
   return (
     <div className="">
-      <div className="bg-gray-50 grid grid-cols-1 md:grid-cols-2 gap-x-16">
-        <div className="prose mx-auto md:mr-0 py-32 px-4 row-start-2 md:row-start-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 h-screen">
+        <div className="prose self-center mx-auto md:mr-0 px-24 row-start-2 md:row-start-auto">
           {title}
           {description}
           <a
@@ -27,7 +27,7 @@ export function QuestionPageLayout({
             Start
           </a>
         </div>
-        <div className="w-full h-full min-h-[400px] from-blue-50 to-blue-200 bg-gradient-radial row-start-1 md:row-start-auto">
+        <div className="w-full h-full min-h-[400px] from-blue-50 to-blue-200 bg-gradient-radial row-start-1 md:row-start-auto border-y-8 border-r-8 border-white">
           <IconCanvas>{three}</IconCanvas>
         </div>
       </div>

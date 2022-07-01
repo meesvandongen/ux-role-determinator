@@ -41,9 +41,10 @@ export function Icon(): JSX.Element {
     <>
       <ContactShadows
         position={[0, -1.4, 0]}
-        opacity={0.75}
+        color={0x92AFD3}
+        opacity={1}
         scale={10}
-        blur={2.5}
+        blur={5}
         far={4}
       />
       <pointLight position={[1, 1, 5]} color={0xcbd9ea} intensity={1.5} />
