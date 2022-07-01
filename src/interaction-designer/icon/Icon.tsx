@@ -7,15 +7,16 @@ import iconURL from "./visual_design.gltf?url";
 
 type GLTFResult = GLTF & {
   nodes: {
-    pen: THREE.Mesh;
-    ruler: THREE.Mesh;
-    ruler_guides: THREE.Mesh;
-  };
+    pen: THREE.Mesh
+    ruler: THREE.Mesh
+    ruler_guides: THREE.Mesh
+  }
   materials: {
-    pen: THREE.MeshStandardMaterial;
-    ruler: THREE.MeshStandardMaterial;
-  };
-};
+    ['Maple wood texture']: THREE.MeshStandardMaterial
+    ['Wood texture']: THREE.MeshStandardMaterial
+    Wood: THREE.MeshStandardMaterial
+  }
+}
 
 export function Icon(): JSX.Element {
   const group = useRef<THREE.Group>(null);
@@ -42,21 +43,9 @@ export function Icon(): JSX.Element {
       <pointLight position={[1, 1, 5]} color={0xcbd9ea} intensity={1.5} />
       <group position={[0, 2, 0]} rotation={[Math.PI / 2, 0, Math.PI / 3]}>
         <group ref={group} dispose={null}>
-          <mesh
-            geometry={nodes.pen.geometry}
-            material={materials.pen}
-            scale={0.9}
-          />
-          <mesh
-            geometry={nodes.ruler.geometry}
-            material={materials.ruler}
-            scale={[1, 0.7, 0.9]}
-          />
-          <mesh
-            geometry={nodes.ruler_guides.geometry}
-            material={materials.ruler}
-            position={[0, 0.4, 0]}
-          />
+        <mesh geometry={nodes.pen.geometry} material={materials['Maple wood texture']} scale={0.9} />
+      <mesh geometry={nodes.ruler.geometry} material={materials['Wood texture']} scale={[1, 0.7, 0.9]} />
+      <mesh geometry={nodes.ruler_guides.geometry} material={materials.Wood} position={[0, 0.4, 0]} />
         </group>
       </group>
     </>
