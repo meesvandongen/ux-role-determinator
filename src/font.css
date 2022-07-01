@@ -38,13 +38,13 @@
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 100 1000;
-  src: url("/font/Montserrat-VariableFont_wght.ttf");
+  src: url("/font/Montserrat/Montserrat-VariableFont_wght.ttf");
 }
 @font-face {
   font-family: "Montserrat";
   font-style: italic;
   font-weight: 100 1000;
-  src: url("/font/Montserrat-Italic-VariableFont_wght.ttf");
+  src: url("/font/Montserrat/Montserrat-Italic-VariableFont_wght.ttf");
 }
 
 body {
