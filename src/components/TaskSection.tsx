@@ -30,12 +30,30 @@ export function TaskSection({
           }}
         />
       </div>
-      <div className="text-left text-sm font-bold md:col-start-1 md:row-start-2 md:text-right">
+      <button
+        className="text-left text-sm font-bold md:col-start-1 md:row-start-2 md:text-right"
+        onClick={() => {
+          const nextValue =
+            typeof skillAssessmentValue === "number"
+              ? skillAssessmentValue - 1
+              : 1;
+          onSkillAssessmentChange(nextValue < 1 ? 1 : nextValue);
+        }}
+      >
         Junior
-      </div>
-      <div className="text-right text-sm font-bold md:col-start-3 md:row-start-2 md:text-left">
+      </button>
+      <button
+        className="text-right text-sm font-bold md:col-start-3 md:row-start-2 md:text-left"
+        onClick={() => {
+          const nextValue =
+            typeof skillAssessmentValue === "number"
+              ? skillAssessmentValue + 1
+              : 1;
+          onSkillAssessmentChange(nextValue > 10 ? 10 : nextValue);
+        }}
+      >
         Senior
-      </div>
+      </button>
     </div>
   );
 }
