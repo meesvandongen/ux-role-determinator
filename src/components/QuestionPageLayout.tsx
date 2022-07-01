@@ -27,7 +27,7 @@ export function QuestionPageLayout({
             Start
           </a>
         </div>
-        <div className="w-full h-full min-h-[400px] from-blue-50 to-blue-200 bg-gradient-radial row-start-1 md:row-start-auto border-y-8 border--8 border-white">
+        <div className="w-full h-full min-h-[400px] from-blue-50 to-blue-200 bg-gradient-radial row-start-1 md:row-start-auto border-y-8 border-r-8 border-white">
           <IconCanvas>{three}</IconCanvas>
         </div>
       </div>
