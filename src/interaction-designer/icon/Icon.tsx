@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
-import { ContactShadows, useGLTF } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import iconURL from "./visual_design.gltf?url";
 
@@ -39,14 +39,6 @@ export function Icon(): JSX.Element {
 
   return (
     <>
-      <ContactShadows
-        position={[0, -1.4, 0]}
-        color={0x92AFD3}
-        opacity={1}
-        scale={10}
-        blur={5}
-        far={4}
-      />
       <pointLight position={[1, 1, 5]} color={0xcbd9ea} intensity={1.5} />
       <group position={[0, 2, 0]} rotation={[Math.PI / 2, 0, Math.PI / 3]}>
         <group ref={group} dispose={null}>
