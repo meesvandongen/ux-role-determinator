@@ -22,12 +22,12 @@ export function QuestionPageLayout({
           {description}
           <a
             href="#vragenlijst"
-            className="bg-blue-600 text-blue-50 px-3 py-1.5 w-[16rem] rounded max-w-full mt-16 inline-block text-center no-underline hover:bg-blue-500"
+            className="bg-blue-600 text-blue-50 px-3 py-1.5 w-[16rem] rounded max-w-full mt-8 inline-block text-center no-underline hover:bg-blue-500"
           >
             Start
           </a>
         </div>
-        <div className="w-full h-full min-h-[400px] from-blue-50 to-blue-200 bg-gradient-radial row-start-1 md:row-start-auto border-y-8 border-r-8 border-white">
+        <div className="w-full h-full min-h-[400px] from-blue-50 to-blue-200 bg-gradient-radial row-start-1 md:row-start-auto border-y-8 border--8 border-white">
           <IconCanvas>{three}</IconCanvas>
         </div>
       </div>
