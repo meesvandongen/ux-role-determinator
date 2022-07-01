@@ -16,25 +16,25 @@ export function QuestionPageLayout({
 }: QuestionPageLayoutProps): JSX.Element {
   return (
     <div className="">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 h-screen">
-        <div className="prose self-center mx-auto md:mr-0 px-24 row-start-2 md:row-start-auto">
+      <div className="grid min-h-screen grid-cols-1 grid-rows-[auto,auto] gap-y-8 gap-x-16 md:grid-cols-2 md:grid-rows-none">
+        <div className="prose row-start-2 mx-auto self-center p-4 md:row-start-auto md:mr-0 md:px-24">
           {title}
           {description}
           <a
             href="#vragenlijst"
-            className="bg-blue-600 text-blue-50 px-3 py-1.5 w-[16rem] rounded max-w-full mt-8 inline-block text-center no-underline hover:bg-blue-500"
+            className="mt-8 inline-block w-[16rem] max-w-full rounded bg-blue-600 px-3 py-1.5 text-center text-blue-50 no-underline hover:bg-blue-500"
           >
             Start
           </a>
         </div>
-        <div className="w-full h-full min-h-[400px] from-blue-50 to-blue-200 bg-gradient-radial row-start-1 md:row-start-auto border-y-8 border-r-8 border-white">
-          <IconCanvas>{three}</IconCanvas>
+        <div className="p-4">
+          <div className="row-start-1 h-full min-h-[400px] w-full bg-gradient-radial from-blue-50 to-blue-200 md:row-start-auto">
+            <IconCanvas>{three}</IconCanvas>
+          </div>
         </div>
       </div>
       <div className="bg-[rgb(17,11,25)] text-purple-50" id="vragenlijst">
-        <div className="grid-cols-[1fr,auto,1fr] grid items-center gap-y-12 gap-x-8 py-32">
-          {questions}
-        </div>
+        <div className="grid gap-y-32 py-32 px-4">{questions}</div>
       </div>
     </div>
   );

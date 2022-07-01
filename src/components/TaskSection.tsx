@@ -14,14 +14,13 @@ export function TaskSection({
   onSkillAssessmentChange,
 }: TaskSectionProps): JSX.Element {
   return (
-    <>
-      <div className="prose prose-invert prose-purple col-start-2 ">
+    <div className="grid grid-cols-2 items-center gap-x-8 gap-y-8 md:grid-cols-[minmax(0,1fr),1fr,minmax(0,1fr)]">
+      <div className="prose prose-invert prose-purple col-span-2 pb-8 md:col-span-1 md:col-start-2">
         <h3>{title}</h3>
         {description}
       </div>
 
-      <div className="col-start-1 text-right font-bold text-sm">Junior</div>
-      <div className="col-start-2 w-full">
+      <div className="col-span-2 w-full md:col-span-1 md:col-start-2">
         <CirclesRange
           min={1}
           max={10}
@@ -31,8 +30,12 @@ export function TaskSection({
           }}
         />
       </div>
-      <div className="col-start-3 text-left font-bold text-sm">Senior</div>
-      <div className="h-16 col-start-2" />
-    </>
+      <div className="text-left text-sm font-bold md:col-start-1 md:row-start-2 md:text-right">
+        Junior
+      </div>
+      <div className="text-right text-sm font-bold md:col-start-3 md:row-start-2 md:text-left">
+        Senior
+      </div>
+    </div>
   );
 }
