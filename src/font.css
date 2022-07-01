@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "Hind Madurai";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/font/Hind_Madurai/HindMadurai-Light.ttf);
+}
+@font-face {
+  font-family: "Hind Madurai";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/font/Hind_Madurai/HindMadurai-Regular.ttf);
+}
+@font-face {
+  font-family: "Hind Madurai";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/font/Hind_Madurai/HindMadurai-Medium.ttf);
+}
+@font-face {
+  font-family: "Hind Madurai";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/font/Hind_Madurai/HindMadurai-SemiBold.ttf);
+}
+@font-face {
+  font-family: "Hind Madurai";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/font/Hind_Madurai/HindMadurai-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 100 1000;
+  src: url("/font/Montserrat-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 100 1000;
+  src: url("/font/Montserrat-Italic-VariableFont_wght.ttf");
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Hind Madurai", sans-serif;
+}
