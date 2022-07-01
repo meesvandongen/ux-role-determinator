@@ -14,7 +14,7 @@ export function TaskSection({
   onSkillAssessmentChange,
 }: TaskSectionProps): JSX.Element {
   return (
-    <div className="grid grid-cols-2 items-center gap-x-8 gap-y-8 md:grid-cols-[minmax(0,1fr),1fr,minmax(0,1fr)]">
+    <div className="grid grid-cols-2 items-center gap-x-8 gap-y-8 md:grid-cols-[auto,minmax(0,65ch),auto]">
       <div className="prose prose-invert prose-purple col-span-2 pb-8 md:col-span-1 md:col-start-2">
         <h3>{title}</h3>
         {description}
