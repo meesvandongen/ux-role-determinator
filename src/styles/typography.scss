@@ -47,9 +47,15 @@
   src: url("/font/Montserrat/Montserrat-Italic-VariableFont_wght.ttf");
 }
 
-body {
-  font-family: "Hind Madurai", sans-serif;
-}
+// Font families
+// ================================
+$font-family--hind-madurai: "Hind Madurai", sans-serif;
+$font-family--montserrat: "Montserrat", sans-serif;
+
+// Font colors
+// ================================
+$font-color--default: #150C21;
+$font-color--highlight: #3B63F9;
 
 h1,
 h2,
@@ -57,5 +63,39 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", sans-serif;
+  font-family: $font-family--montserrat;
+  color: $font-color--default;
+}
+
+h1 {
+  font-weight: 750;
+  font-size: 40px;
+  line-height: 40px;
+  
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}
+
+p {
+  font-family: $font-family--hind-madurai;
+  font-size: 18px;
+  line-height: 28px;
+  color: $font-color--default;
+
+  strong {
+    font-weight: 600;
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: 16px;
+  }
+}
+
+p > a {
+  font-family: $font-family--hind-madurai;
+  font-size: 18px;
+  line-height: 28px;
+  color: $font-color--highlight;
+  text-decoration: underline;
 }

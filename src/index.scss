@@ -2,7 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@import "./font.css";
+@import "./styles/typography.scss";
 
 #root {
   @apply flex flex-col;
