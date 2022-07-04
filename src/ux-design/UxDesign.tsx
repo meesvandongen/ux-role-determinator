@@ -9,7 +9,7 @@ import { QuestionPageLayout } from "../components/QuestionPageLayout";
 export function UxDesign(): JSX.Element {
   return (
     <QuestionPageLayout
-      title={<h1>UX Design 👨‍🎨</h1>}
+      title={<h1>Visual / interface design</h1>}
       description={
         <>
           <p>

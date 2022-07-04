@@ -17,7 +17,7 @@ export function QuestionPageLayout({
   return (
     <div className="">
       <div className="grid min-h-screen grid-cols-1 grid-rows-[auto,auto] gap-y-8 gap-x-16 md:grid-cols-2 md:grid-rows-none">
-        <div className="prose row-start-2 mx-auto self-center p-4 md:row-start-auto md:mr-0 md:px-24">
+        <div className="row-start-2 mx-auto self-center p-4 md:row-start-auto md:mr-0 md:px-24">
           {title}
           {description}
           <a
