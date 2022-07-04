@@ -5,19 +5,17 @@ import { ContentStrategy } from "./ContentStrategy";
 import { ContentWriting } from "./ContentWriting";
 import { QuestionPageLayout } from "../components/QuestionPageLayout";
 
-export function ContentSpecialist(): JSX.Element {
+export function UxWriting(): JSX.Element {
   return (
     <QuestionPageLayout
-      title={<h1>Writer/Content Specialist</h1>}
+      title={<h1>UX Writing 🧑‍🏫</h1>}
       description={
         <p>
-          Je houdt je bezig met het schrijven voor interfaces in digitale
-          producten. Hierbij ligt de focus op het begeleiden van gebruikers door
-          de interface op een intuïtieve manier. Je schrijft copy/microcopy met
-          de juiste tone of voice die de gewenste emotie oproept passend bij de
-          context waarin de (eind) gebruiker zich bevindt. Dit zet jouw klant in
-          de schijnwerpers in de markt en bindt de (eind)gebruikers aan deze
-          klant.
+          Een UX-writer is een storyteller die voor de uitdaging staat om alle
+          elementen van content – waaronder relevantie, beeld, design, SEO en
+          beleving – samen te laten smelten tot content en interacties die
+          aansluiten op de verwachtingen en referentiekader van de
+          eindgebruiker.
         </p>
       }
       questions={

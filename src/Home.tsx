@@ -3,24 +3,21 @@ import { Link } from "react-router-dom";
 
 export function Home(): JSX.Element {
   return (
-    <div className="grid grid-cols-2 items-center content-center justify-center text-center gap-16 py-16 mx-auto container font-bold">
-      <Link className="p-16 border border-gray-400 rounded" to={"/content"}>
-        Content Specialist
+    <div className="container mx-auto grid grid-cols-2 content-center items-center justify-center gap-16 py-16 text-center font-bold">
+      <Link className="rounded border border-gray-400 p-16" to={"writing"}>
+        UX Writing
       </Link>
-      <Link className="p-16 border border-gray-400 rounded" to={"/developer"}>
-        Developer
+      <Link className="rounded border border-gray-400 p-16" to={"development"}>
+        UX Development
       </Link>
-      <Link
-        className="p-16 border border-gray-400 rounded"
-        to={"/interaction-designer"}
-      >
-        Interaction Designer
+      <Link className="rounded border border-gray-400 p-16" to={"design"}>
+        UX Design
       </Link>
-      <Link
-        className="p-16 border border-gray-400 rounded"
-        to={"/user-researcher"}
-      >
-        User Researcher
+      <Link className="rounded border border-gray-400 p-16" to={"research"}>
+        UX Research
+      </Link>
+      <Link className="rounded border border-gray-400 p-16" to={"managing"}>
+        UX Managing
       </Link>
     </div>
   );
