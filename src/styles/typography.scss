@@ -1,3 +1,5 @@
+@import "calculations";
+
 @font-face {
   font-family: "Hind Madurai";
   font-style: normal;
@@ -57,6 +59,10 @@ $font-family--montserrat: "Montserrat", sans-serif;
 $font-color--default: #150C21;
 $font-color--highlight: #3B63F9;
 
+html {
+  font-size: 16px;
+}
+
 h1,
 h2,
 h3,
@@ -69,18 +75,18 @@ h6 {
 
 h1 {
   font-weight: 750;
-  font-size: 40px;
-  line-height: 40px;
+  font-size: rem(40);
+  line-height: rem(40);
   
   &:not(:last-child) {
-    margin-bottom: 32px;
+    margin-bottom: multiplyBase(4);
   }
 }
 
 p {
   font-family: $font-family--hind-madurai;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: rem(18);
+  line-height: rem(28);
   color: $font-color--default;
 
   strong {
@@ -88,14 +94,14 @@ p {
   }
 
   &:not(:last-of-type) {
-    margin-bottom: 16px;
+    margin-bottom: rem(16);
   }
 }
 
 p > a {
   font-family: $font-family--hind-madurai;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: rem(16);
+  line-height: rem(28);
   color: $font-color--highlight;
   text-decoration: underline;
 }
