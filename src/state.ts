@@ -1,57 +1,36 @@
 import { proxy } from "valtio";
 import { watch } from "valtio/utils";
+import { Assessment } from "./calculations";
 
-interface SelfAssessment {
-  // VisualInteractionDesignerAssessment
-  graphics: "unset" | number;
-  prototyping: "unset" | number;
-  uiTheory: "unset" | number;
-  ui: "unset" | number;
-  // UserResearcherAssessment
-  dataAnalysis: "unset" | number;
-  researchEvangelist: "unset" | number;
-  conductingResearch: "unset" | number;
-  definingResearch: "unset" | number;
-  // UxWriterAssessment
-  campaigning: "unset" | number;
-  contentManagement: "unset" | number;
-  contentStrategy: "unset" | number;
-  contentWriting: "unset" | number;
-  // CreativeDeveloperAssessment
-  designImplementation: "unset" | number;
-  richInteraction: "unset" | number;
-  codeUxAdvocate: "unset" | number;
-}
-
-const initialState: SelfAssessment = (() => {
+const initialState: Assessment = (() => {
   const str = localStorage.getItem("selfAssessmentState");
   if (str) {
     return JSON.parse(str);
   }
   return {
     // VisualInteractionDesignerAssessment
-    graphics: "unset",
-    prototyping: "unset",
-    uiTheory: "unset",
-    ui: "unset",
+    graphics: 1,
+    prototyping: 1,
+    uiTheory: 1,
+    ui: 1,
     // UserResearcherAssessment
-    dataAnalysis: "unset",
-    researchEvangelist: "unset",
-    conductingResearch: "unset",
-    definingResearch: "unset",
+    dataAnalysis: 1,
+    researchEvangelist: 1,
+    conductingResearch: 1,
+    definingResearch: 1,
     // UxWriterAssessment
-    campaigning: "unset",
-    contentManagement: "unset",
-    contentStrategy: "unset",
-    contentWriting: "unset",
+    campaigning: 1,
+    contentManagement: 1,
+    contentStrategy: 1,
+    contentWriting: 1,
     // CreativeDeveloperAssessment
-    designImplementation: "unset",
-    richInteraction: "unset",
-    codeUxAdvocate: "unset",
+    designImplementation: 1,
+    richInteraction: 1,
+    codeUxAdvocate: 1,
   };
 })();
 
-export const selfAssessmentState = proxy<SelfAssessment>(initialState);
+export const selfAssessmentState = proxy<Assessment>(initialState);
 
 watch((get) => {
   localStorage.setItem(

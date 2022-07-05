@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { IconCanvas } from "./IconCanvas";
 
 interface QuestionPageLayoutProps {
@@ -35,6 +36,14 @@ export function QuestionPageLayout({
       </div>
       <div className="bg-[rgb(17,11,25)] text-purple-50" id="vragenlijst">
         <div className="grid gap-y-32 py-32 px-4">{questions}</div>
+        <div className="max-w-prose mx-auto pb-16">
+          <Link
+            to="/"
+            className="mt-8 inline-block w-[16rem] max-w-full rounded bg-blue-600 px-3 py-1.5 text-center text-blue-50 no-underline hover:bg-blue-500"
+          >
+            Afronden
+          </Link>
+        </div>
       </div>
     </div>
   );

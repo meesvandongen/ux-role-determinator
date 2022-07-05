@@ -4,8 +4,8 @@ import { CirclesRange } from "./CirclesRange";
 interface TaskSectionProps {
   title: string;
   description: React.ReactNode;
-  skillAssessmentValue: number | "unset";
-  onSkillAssessmentChange: (value: number | "unset") => void;
+  skillAssessmentValue: number;
+  onSkillAssessmentChange: (value: number) => void;
 }
 export function TaskSection({
   title,
@@ -23,7 +23,7 @@ export function TaskSection({
       <div className="col-span-2 w-full md:col-span-1 md:col-start-2">
         <CirclesRange
           min={1}
-          max={10}
+          max={9}
           value={skillAssessmentValue}
           onChange={(value) => {
             onSkillAssessmentChange(value);

@@ -1,8 +1,8 @@
 import React from "react";
 
 interface CirclesRangeProps {
-  value: number | "unset";
-  onChange: (value: number | "unset") => void;
+  value: number;
+  onChange: (value: number) => void;
   min?: number;
   max?: number;
 }

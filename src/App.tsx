@@ -6,10 +6,12 @@ import { UxWriting } from "./ux-writing/UxWriting";
 import { UxDevelopment } from "./ux-development/UxDevelopment";
 import { Home } from "./Home";
 import { UxManaging } from "./ux-managing/UxManaging";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App(): JSX.Element {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="flex-auto grow">
         <Routes>
           <Route path="writing" element={<UxWriting />} />
