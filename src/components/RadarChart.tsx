@@ -86,9 +86,7 @@ export function RadarChart({
                 key={i}
                 radarValues={categories.map(() => i)}
                 size={size}
-                fill="transparent"
-                stroke="#ccc"
-                strokeWidth="1"
+                className="fill-transparent stroke-gray-50 stroke-1"
               />
             );
           })}
@@ -103,24 +101,10 @@ export function RadarChart({
                   filter: "drop-shadow(0 0 15px rgb(0 0 0 / .4))",
                 }}
               >
-                <RadarShape
-                  radarValues={values}
-                  size={size}
-                  fill={color}
-                  stroke="#fff"
-                  strokeWidth="3"
-                />
+                <RadarShape radarValues={values} size={size} fill={color} />
               </g>
             );
           })}
-          {/* <circle
-            cx="0"
-            cy="0"
-            r={radius}
-            fill="transparent"
-            stroke="#ccc"
-            strokeWidth="1"
-          /> */}
         </g>
       </svg>
     </div>
