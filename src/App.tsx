@@ -7,10 +7,12 @@ import { UxDevelopment } from "./ux-development/UxDevelopment";
 import { Home } from "./Home";
 import { UxManaging } from "./ux-managing/UxManaging";
 import ScrollToTop from "./components/ScrollToTop";
+import {GlobalStyles} from "./styles/global.styles";
 
 function App(): JSX.Element {
   return (
     <BrowserRouter>
+      <GlobalStyles />
       <ScrollToTop />
       <div className="flex-auto grow">
         <Routes>
