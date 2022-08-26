@@ -12,12 +12,15 @@ const colorPalette = {
 export const colors = {
     background: {
         dark: colorPalette.grayD200,
-        default: colorPalette.white,
+        base: colorPalette.white,
     },
     text: {
         dark: colorPalette.grayD200,
         default: colorPalette.grayD100,
         anchor: colorPalette.blue,
+        inverted: colorPalette.white,
+    },
+    border: {
         inverted: colorPalette.white,
     },
     button: {

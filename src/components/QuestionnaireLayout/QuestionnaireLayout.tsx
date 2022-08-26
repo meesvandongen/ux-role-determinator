@@ -2,6 +2,7 @@ import React from 'react';
 import {IconCanvas} from "../IconCanvas";
 import {Logo} from "../Logo/Logo";
 import * as S from './questionnaire-layout.styles';
+import {IconCanvasContainer} from "./questionnaire-layout.styles";
 
 
 interface QuestionnaireLayoutProps {
@@ -22,19 +23,21 @@ export function QuestionnaireLayout(
     return (
         <S.QuestionnaireLayout>
             <S.QuestionnaireHeader>
-                <div className="bg-gradient-radial from-blue-50 to-blue-200">
+                <S.IconCanvasContainer className="bg-gradient-radial from-blue-50 to-blue-200">
                     <IconCanvas>{three}</IconCanvas>
-                </div>
+                </S.IconCanvasContainer>
                 <S.QuestionnaireHeaderContent>
                     <Logo/>
                     <div className="foreword">
                         <h1>{title}</h1>
                         {description}
-                        <S.ButtonLink href="#questionnaire"><span>Naar vragenlijst</span></S.ButtonLink>
+                        <S.ButtonLink href="#questionnaire">
+                            <span>Naar vragenlijst</span>
+                        </S.ButtonLink>
                     </div>
                 </S.QuestionnaireHeaderContent>
             </S.QuestionnaireHeader>
-            <S.Questionnaire>
+            <S.Questionnaire id="questionnaire">
                 {questions}
             </S.Questionnaire>
         </S.QuestionnaireLayout>

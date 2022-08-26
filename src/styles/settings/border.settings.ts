@@ -5,3 +5,7 @@ export const borderRadius = {
     default: rem(4),
     large: rem(8),
 }
+
+export const borderWidth = {
+    default: rem(2),
+}

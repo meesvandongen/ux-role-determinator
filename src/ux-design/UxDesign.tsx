@@ -1,9 +1,9 @@
 import React from "react";
-import {Graphics} from "./Graphics";
+import {Graphics} from "./questions/Graphics";
 import {Icon} from "./icon/Icon";
-import {Prototyping} from "./Prototyping";
-import {UiTheory} from "./UiTheory";
-import {UserInterface} from "./UserInterface";
+import {Prototyping} from "./questions/Prototyping";
+import {UiTheory} from "./questions/UiTheory";
+import {UserInterface} from "./questions/UserInterface";
 import {QuestionnaireLayout} from "../components/QuestionnaireLayout/QuestionnaireLayout";
 
 export function UxDesign(): JSX.Element {

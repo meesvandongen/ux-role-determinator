@@ -1,18 +1,18 @@
 import React from "react";
 import { useSnapshot } from "valtio";
-import { TaskSection } from "../components/TaskSection";
-import { selfAssessmentState } from "../state";
+import { selfAssessmentState } from "../../state";
+import {SkillAssessment} from "../../components/SkillAssessment/SkillAssessment";
 
 export function Prototyping(): JSX.Element {
   const selfAssessmentSnapshot = useSnapshot(selfAssessmentState);
 
   return (
-    <TaskSection
+    <SkillAssessment
       onSkillAssessmentChange={(newValue) => {
         selfAssessmentState.prototyping = newValue;
       }}
       skillAssessmentValue={selfAssessmentSnapshot.prototyping}
-      title="Prototyping"
+      subject="Prototyping"
       description={
         <>
           <p>
@@ -26,6 +26,6 @@ export function Prototyping(): JSX.Element {
           </p>
         </>
       }
-    ></TaskSection>
+    />
   );
 }

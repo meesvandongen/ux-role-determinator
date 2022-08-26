@@ -1,18 +1,18 @@
 import React from "react";
 import { useSnapshot } from "valtio";
-import { TaskSection } from "../components/TaskSection";
-import { selfAssessmentState } from "../state";
+import { selfAssessmentState } from "../../state";
+import {SkillAssessment} from "../../components/SkillAssessment/SkillAssessment";
 
 export function Graphics(): JSX.Element {
   const selfAssessmentSnapshot = useSnapshot(selfAssessmentState);
 
   return (
-    <TaskSection
+    <SkillAssessment
       onSkillAssessmentChange={(newValue) => {
         selfAssessmentState.graphics = newValue;
       }}
       skillAssessmentValue={selfAssessmentSnapshot.graphics}
-      title="Graphics"
+      subject="Graphics"
       description={
         <p>
           Creëren van ontwerp artefacten en grafische elementen. Deze elementen

@@ -8,6 +8,7 @@ import {eBreakpoint} from "../../styles/settings/media/media.models";
 import media from '../../styles/settings/media/media.settings';
 
 export const QuestionnaireLayout = styled.div`
+  background-color: ${colors.background.base};
 `;
 
 export const QuestionnaireHeader = styled.div`
@@ -36,10 +37,21 @@ export const QuestionnaireHeaderContent = styled.div`
   }
 `;
 
+export const IconCanvasContainer = styled.div`
+  border-radius: ${borderRadius.default};
+`;
+
 export const Questionnaire = styled.div`
-  display: block;
+  display: grid;
   padding: ${multiplyBase(12)} 0;
+  grid-template-columns: minmax(40px, auto) minmax(auto, 688px) minmax(40px, auto);
+  grid-row-gap: ${multiplyBase(16)};
+  grid-auto-flow: row;
   background-color: ${colors.background.dark};
+  
+  > * {
+    grid-column: 2;
+  }
 `;
 
 export const ButtonLink = styled.a`

@@ -1,18 +1,18 @@
 import React from "react";
-import { useSnapshot } from "valtio";
-import { TaskSection } from "../components/TaskSection";
-import { selfAssessmentState } from "../state";
+import {useSnapshot} from "valtio";
+import {selfAssessmentState} from "../../state";
+import {SkillAssessment} from "../../components/SkillAssessment/SkillAssessment";
 
 export function UserInterface(): JSX.Element {
   const selfAssessmentSnapshot = useSnapshot(selfAssessmentState);
 
   return (
-    <TaskSection
+    <SkillAssessment
       onSkillAssessmentChange={(newValue) => {
         selfAssessmentState.ui = newValue;
       }}
       skillAssessmentValue={selfAssessmentSnapshot.ui}
-      title="User Interface"
+      subject="User Interface"
       description={
         <>
           <p>
@@ -24,6 +24,6 @@ export function UserInterface(): JSX.Element {
           </p>
         </>
       }
-    ></TaskSection>
+    />
   );
 }

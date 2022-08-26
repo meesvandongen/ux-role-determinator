@@ -1,4 +1,5 @@
 import React from "react";
+import * as S from './circle-range.styles';
 
 interface CirclesRangeProps {
   value: number;
@@ -24,14 +25,14 @@ export function CirclesRange({
         <label key={i} className="flex cursor-pointer">
           <input
             className="invisible peer h-0 w-0"
-            type="radio"
+            type="checkbox"
             value={i}
             checked={value === i}
             onChange={(e) => {
               onChange(Number(e.target.value));
             }}
           />
-          <span className="rounded-full w-8 h-8 border border-purple-50 block peer-checked:bg-white" />
+          <S.Circle checked={value >= i} index={i} />
         </label>
       ))}
     </div>
