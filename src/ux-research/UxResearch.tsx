@@ -1,14 +1,14 @@
 import React from "react";
-import { ConductingResearch } from "./ConductingResearch";
-import { DataAnalysis } from "./DataAnalysis";
-import { DefiningResearch } from "./DefiningResearch";
-import { ResearchEvangelist } from "./ResearchEvangelist";
-import { QuestionPageLayout } from "../components/QuestionPageLayout";
+import {ConductingResearch} from "./questions/ConductingResearch";
+import {DataAnalysis} from "./questions/DataAnalysis";
+import {DefiningResearch} from "./questions/DefiningResearch";
+import {ResearchEvangelist} from "./questions/ResearchEvangelist";
+import {QuestionnaireLayout} from "../components/QuestionnaireLayout/QuestionnaireLayout";
 
 export function UxResearch(): JSX.Element {
   return (
-    <QuestionPageLayout
-      title={<h1>UX Research 🕵️‍♀️</h1>}
+    <QuestionnaireLayout
+      title={"UX Research"}
       description={
         <>
           <p>

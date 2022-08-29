@@ -51,6 +51,7 @@ export const Questionnaire = styled.div`
   
   > * {
     grid-column: 2;
+    width: 100%;
   }
 `;
 

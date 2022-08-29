@@ -1,18 +1,18 @@
 import React from "react";
-import { useSnapshot } from "valtio";
-import { TaskSection } from "../components/TaskSection";
-import { selfAssessmentState } from "../state";
+import {useSnapshot} from "valtio";
+import {selfAssessmentState} from "../../state";
+import {SkillAssessment} from "../../components/SkillAssessment/SkillAssessment";
 
 export function ConductingResearch(): JSX.Element {
   const selfAssessmentSnapshot = useSnapshot(selfAssessmentState);
 
   return (
-    <TaskSection
+    <SkillAssessment
       skillAssessmentValue={selfAssessmentSnapshot.conductingResearch}
       onSkillAssessmentChange={(newValue) => {
         selfAssessmentState.conductingResearch = newValue;
       }}
-      title="Uitvoeren onderzoeken"
+      subject="Uitvoeren onderzoeken"
       description={
         <>
           <p>kwalitatieve en kwantitatieve onderzoeken uitvoeren.</p>

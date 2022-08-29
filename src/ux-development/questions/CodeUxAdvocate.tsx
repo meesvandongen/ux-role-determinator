@@ -1,18 +1,18 @@
 import React from "react";
-import { useSnapshot } from "valtio";
-import { TaskSection } from "../components/TaskSection";
-import { selfAssessmentState } from "../state";
+import {useSnapshot} from "valtio";
+import {selfAssessmentState} from "../../state";
+import {SkillAssessment} from "../../components/SkillAssessment/SkillAssessment";
 
 export function CodeUxAdvocate(): JSX.Element {
   const selfAssessmentSnapshot = useSnapshot(selfAssessmentState);
 
   return (
-    <TaskSection
+    <SkillAssessment
       onSkillAssessmentChange={(newValue) => {
         selfAssessmentState.codeUxAdvocate = newValue;
       }}
       skillAssessmentValue={selfAssessmentSnapshot.codeUxAdvocate}
-      title="UX vertegenwoordiger in code"
+      subject="UX vertegenwoordiger in code"
       description={
         <>
           <p>Beheren en bewaken van styleguides in de code</p>

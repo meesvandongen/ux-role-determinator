@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {colors} from "../../styles/settings/colors.settings";
 import {fontSizes} from "../../styles/settings/typography.settings";
-import {multiplyBase} from "../../styles/settings/rem.settings";
+import {multiplyBase, rem} from "../../styles/settings/rem.settings";
 
 
 export const SkillAssessmentHeader = styled.div`
@@ -25,7 +25,7 @@ export const SkillAssessmentRange = styled.div`
 
 export const SkillAssessment = styled.div`
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: ${rem(56)} 1fr ${rem(56)};
   grid-column-gap: ${multiplyBase(4)};
   grid-row-gap: ${multiplyBase(6)};
   

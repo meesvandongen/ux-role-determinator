@@ -1,18 +1,18 @@
 import React from "react";
-import { useSnapshot } from "valtio";
-import { TaskSection } from "../components/TaskSection";
-import { selfAssessmentState } from "../state";
+import {useSnapshot} from "valtio";
+import {selfAssessmentState} from "../../state";
+import {SkillAssessment} from "../../components/SkillAssessment/SkillAssessment";
 
 export function DataAnalysis(): JSX.Element {
   const selfAssessmentSnapshot = useSnapshot(selfAssessmentState);
 
   return (
-    <TaskSection
+    <SkillAssessment
       skillAssessmentValue={selfAssessmentSnapshot.dataAnalysis}
       onSkillAssessmentChange={(newValue) => {
         selfAssessmentState.dataAnalysis = newValue;
       }}
-      title="Data analyseren & interpreteren"
+      subject="Data analyseren & interpreteren"
       description={
         <>
           <p>Analyseren van gebruikservaringen, -wensen, -knelpunten</p>

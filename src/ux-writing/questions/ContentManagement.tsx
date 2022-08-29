@@ -1,18 +1,18 @@
 import React from "react";
-import { useSnapshot } from "valtio";
-import { TaskSection } from "../components/TaskSection";
-import { selfAssessmentState } from "../state";
+import {useSnapshot} from "valtio";
+import {selfAssessmentState} from "../../state";
+import {SkillAssessment} from "../../components/SkillAssessment/SkillAssessment";
 
 export function ContentManagement(): JSX.Element {
   const selfAssessmentSnapshot = useSnapshot(selfAssessmentState);
 
   return (
-    <TaskSection
+    <SkillAssessment
       onSkillAssessmentChange={(newValue) => {
         selfAssessmentState.contentManagement = newValue;
       }}
       skillAssessmentValue={selfAssessmentSnapshot.contentManagement}
-      title="Contentbeheer"
+      subject="Contentbeheer"
       description={
         <>
           <p>Content Management in meerdere gangbare CMS systemen.</p>
