@@ -3,7 +3,7 @@ import {ConductingResearch} from "./questions/ConductingResearch";
 import {DataAnalysis} from "./questions/DataAnalysis";
 import {DefiningResearch} from "./questions/DefiningResearch";
 import {ResearchEvangelist} from "./questions/ResearchEvangelist";
-import {QuestionnaireLayout} from "../components/QuestionnaireLayout/QuestionnaireLayout";
+import {QuestionnaireLayout} from "../../components/QuestionnaireLayout/QuestionnaireLayout";
 
 export function UxResearch(): JSX.Element {
   return (

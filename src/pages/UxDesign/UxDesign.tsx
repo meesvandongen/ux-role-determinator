@@ -4,7 +4,7 @@ import {Icon} from "./icon/Icon";
 import {Prototyping} from "./questions/Prototyping";
 import {UiTheory} from "./questions/UiTheory";
 import {UserInterface} from "./questions/UserInterface";
-import {QuestionnaireLayout} from "../components/QuestionnaireLayout/QuestionnaireLayout";
+import {QuestionnaireLayout} from "../../components/QuestionnaireLayout/QuestionnaireLayout";
 
 export function UxDesign(): JSX.Element {
     return (

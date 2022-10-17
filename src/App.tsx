@@ -1,11 +1,11 @@
 import React from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {UxResearch} from "./ux-research/UxResearch";
-import {UxDesign} from "./ux-design/UxDesign";
-import {UxWriting} from "./ux-writing/UxWriting";
-import {UxDevelopment} from "./ux-development/UxDevelopment";
+import {UxResearch} from "./pages/UxResearch/UxResearch";
+import {UxDesign} from "./pages/UxDesign/UxDesign";
+import {UxWriting} from "./pages/UxWriting/UxWriting";
+import {UxDevelopment} from "./pages/UxDevelopment/UxDevelopment";
 import {Home} from "./pages/Home/Home";
-import {UxManaging} from "./ux-managing/UxManaging";
+import {UxManaging} from "./pages/UxManaging/UxManaging";
 import ScrollToTop from "./components/ScrollToTop";
 import {GlobalStyles} from "./styles/global.styles";
 import {Footer} from "./components/footer/Footer";

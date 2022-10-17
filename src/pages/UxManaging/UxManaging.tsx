@@ -1,6 +1,6 @@
 import React from "react";
 import {Sample} from "./Sample";
-import {QuestionnaireLayout} from "../components/QuestionnaireLayout/QuestionnaireLayout";
+import {QuestionnaireLayout} from "../../components/QuestionnaireLayout/QuestionnaireLayout";
 
 export function UxManaging(): JSX.Element {
     return (
