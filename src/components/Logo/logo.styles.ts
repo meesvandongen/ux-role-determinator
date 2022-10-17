@@ -2,12 +2,21 @@ import styled from "styled-components";
 import {multiplyBase} from "../../styles/settings/rem.settings";
 import {colors} from "../../styles/settings/colors.settings";
 export const Logo = styled.div`
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: ${multiplyBase(5)} auto;
+  grid-column-gap: ${multiplyBase(2)};
   align-items: center;
   width: fit-content;
-  stroke: ${colors.icon.default};
-  color: ${colors.icon.default};
+  
+  &.default {
+    stroke: ${colors.icon.default};
+    color: ${colors.icon.default};
+  }
+
+  &.inverted {
+    stroke: ${colors.icon.inverted};
+    color: ${colors.icon.inverted};
+  }
 
   &.hoverable:hover {
     stroke: ${colors.icon.hover};
@@ -24,7 +33,5 @@ export const Logo = styled.div`
 
 export const LogoSvg = styled.svg`
   display: block;
-  margin-right: ${multiplyBase(2)};
-  width: auto;
-  height: 100%;
+  width: 100%;
 `;

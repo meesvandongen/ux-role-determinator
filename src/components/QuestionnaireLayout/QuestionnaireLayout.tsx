@@ -27,7 +27,7 @@ export function QuestionnaireLayout(
                 </S.IconCanvasContainer>
                 <S.QuestionnaireHeaderContent>
                     <a href="/">
-                        <Logo hoverable={true}/>
+                        <Logo style={'default'} hoverable={true}/>
                     </a>
                     <div className="foreword">
                         <h1>{title}</h1>

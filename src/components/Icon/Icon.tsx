@@ -7,19 +7,15 @@ import {WritingIcon} from "./icons/Writing.icon";
 import {ResearchIcon} from "./icons/Research.icon";
 import {ManagingIcon} from "./icons/Managing.icon";
 import {ChevronIcon} from "./icons/Chevron.icon";
+import {KnowledgeDomain} from "../../models/knowledge-domain.models";
 
 export enum Icons {
-    VISUAL_DESIGN,
-    DEVELOPMENT,
-    WRITING,
-    RESEARCH,
-    MANAGING,
     CHEVRON
 }
 
 interface IconProps {
     hoverable?: boolean;
-    icon: Icons
+    icon: Icons | KnowledgeDomain
 }
 
 export function Icon(
@@ -32,28 +28,28 @@ export function Icon(
              viewBox="0 0 56 56" fill="none"
              xmlns="http://www.w3.org/2000/svg">
 
-            {icon === Icons.VISUAL_DESIGN && (
-                <VisualDesignIcon />
-            )}
-
-            {icon === Icons.DEVELOPMENT && (
+            {icon === KnowledgeDomain.DEVELOPMENT && (
                 <DevelopmentIcon />
             )}
 
-            {icon === Icons.WRITING && (
+            {icon === KnowledgeDomain.WRITING && (
                 <WritingIcon />
             )}
 
-            {icon === Icons.RESEARCH && (
+            {icon === KnowledgeDomain.RESEARCH && (
                 <ResearchIcon />
             )}
 
-            {icon === Icons.MANAGING && (
+            {icon === KnowledgeDomain.MANAGING && (
                 <ManagingIcon />
             )}
 
             {icon === Icons.CHEVRON && (
                 <ChevronIcon />
+            )}
+
+            {icon === KnowledgeDomain.VISUAL_DESIGN && (
+                <VisualDesignIcon />
             )}
         </S.IconSvg>
     );

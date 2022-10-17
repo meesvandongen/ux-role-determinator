@@ -4,7 +4,7 @@ import {UxResearch} from "./ux-research/UxResearch";
 import {UxDesign} from "./ux-design/UxDesign";
 import {UxWriting} from "./ux-writing/UxWriting";
 import {UxDevelopment} from "./ux-development/UxDevelopment";
-import {Home} from "./Home";
+import {Home} from "./pages/Home/Home";
 import {UxManaging} from "./ux-managing/UxManaging";
 import ScrollToTop from "./components/ScrollToTop";
 import {GlobalStyles} from "./styles/global.styles";
