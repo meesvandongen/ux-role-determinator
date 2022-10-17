@@ -2,7 +2,6 @@ import React from 'react';
 import {IconCanvas} from "../IconCanvas";
 import {Logo} from "../Logo/Logo";
 import * as S from './questionnaire-layout.styles';
-import {IconCanvasContainer} from "./questionnaire-layout.styles";
 
 
 interface QuestionnaireLayoutProps {
@@ -27,7 +26,9 @@ export function QuestionnaireLayout(
                     <IconCanvas>{three}</IconCanvas>
                 </S.IconCanvasContainer>
                 <S.QuestionnaireHeaderContent>
-                    <Logo/>
+                    <a href="/">
+                        <Logo hoverable={true}/>
+                    </a>
                     <div className="foreword">
                         <h1>{title}</h1>
                         {description}
@@ -39,6 +40,7 @@ export function QuestionnaireLayout(
             </S.QuestionnaireHeader>
             <S.Questionnaire id="questionnaire">
                 {questions}
+                <S.ButtonLink href="/">Afronden</S.ButtonLink>
             </S.Questionnaire>
         </S.QuestionnaireLayout>
     );

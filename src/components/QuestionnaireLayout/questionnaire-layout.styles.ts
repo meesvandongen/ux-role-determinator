@@ -35,6 +35,15 @@ export const QuestionnaireHeaderContent = styled.div`
     height: ${multiplyBase(5)};
     margin-bottom: ${multiplyBase(8)};
   }
+  
+  .foreword {
+    display: flex;
+    flex-direction: column;
+    
+    > *:last-child {
+      margin-top: ${multiplyBase(5)};
+    }
+  }
 `;
 
 export const IconCanvasContainer = styled.div`
@@ -58,7 +67,6 @@ export const Questionnaire = styled.div`
 export const ButtonLink = styled.a`
   display: block;
   padding: ${multiplyBase(2)} ${multiplyBase(4)};
-  margin-top: ${multiplyBase(8)};
   color: ${colors.button.primary.text};
   font-size: ${rem(14)};
   font-weight: 700;

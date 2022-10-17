@@ -20,6 +20,10 @@ export const colors = {
         anchor: colorPalette.blue,
         inverted: colorPalette.white,
     },
+    icon: {
+        default: colorPalette.grayD200,
+        hover: colorPalette.blue,
+    },
     border: {
         inverted: colorPalette.white,
     },
