@@ -21,6 +21,6 @@ export const Circle = styled.span<{checked?: boolean, index?: number}>`
     transform: ${props => props.checked ? 'scale(1.1)' : 'scale(0)' };
     transform-origin: center center;
     transition: transform 200ms ease-in-out;
-    transition-delay: ${props => props.index ? props.index * 50 : 0}ms;
+    transition-delay: ${props => props.index ? props.index : 0}ms;
   }
 `;
