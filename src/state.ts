@@ -9,24 +9,24 @@ const initialState: Assessment = (() => {
   }
   return {
     // VisualInteractionDesignerAssessment
-    graphics: 1,
-    prototyping: 1,
-    uiTheory: 1,
-    ui: 1,
+    graphics: 0,
+    prototyping: 0,
+    uiTheory: 0,
+    ui: 0,
     // UserResearcherAssessment
-    dataAnalysis: 1,
-    researchEvangelist: 1,
-    conductingResearch: 1,
-    definingResearch: 1,
+    dataAnalysis: 0,
+    researchEvangelist: 0,
+    conductingResearch: 0,
+    definingResearch: 0,
     // UxWriterAssessment
-    campaigning: 1,
-    contentManagement: 1,
-    contentStrategy: 1,
-    contentWriting: 1,
+    campaigning: 0,
+    contentManagement: 0,
+    contentStrategy: 0,
+    contentWriting: 0,
     // CreativeDeveloperAssessment
-    designImplementation: 1,
-    richInteraction: 1,
-    codeUxAdvocate: 1,
+    designImplementation: 0,
+    richInteraction: 0,
+    codeUxAdvocate: 0,
   };
 })();
 

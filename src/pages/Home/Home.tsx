@@ -26,15 +26,15 @@ export function Home(): JSX.Element {
             <div
                 className="container mx-auto grid grid-cols-2 content-center items-center justify-center gap-16 py-16 text-center font-bold">
                 <KnowledgeDomainCard domain={KnowledgeDomain.DEVELOPMENT} title="UX Development"
-                                     progress={selfAssessment[KnowledgeDomain.DEVELOPMENT]}/>
+                                     progress={selfAssessment[KnowledgeDomain.DEVELOPMENT].progress}/>
                 <KnowledgeDomainCard domain={KnowledgeDomain.VISUAL_DESIGN} title="UX Visual Design"
-                                     progress={selfAssessment[KnowledgeDomain.VISUAL_DESIGN]}/>
+                                     progress={selfAssessment[KnowledgeDomain.VISUAL_DESIGN].progress}/>
                 <KnowledgeDomainCard domain={KnowledgeDomain.WRITING} title="UX Writing"
-                                     progress={selfAssessment[KnowledgeDomain.WRITING]}/>
+                                     progress={selfAssessment[KnowledgeDomain.WRITING].progress}/>
                 <KnowledgeDomainCard domain={KnowledgeDomain.MANAGING} title="UX Managing"
-                                     progress={selfAssessment[KnowledgeDomain.MANAGING]}/>
+                                     progress={selfAssessment[KnowledgeDomain.MANAGING].progress}/>
                 <KnowledgeDomainCard domain={KnowledgeDomain.RESEARCH} title="UX Research"
-                                     progress={selfAssessment[KnowledgeDomain.RESEARCH]}/>
+                                     progress={selfAssessment[KnowledgeDomain.RESEARCH].progress}/>
             </div>
         </div>
     );
