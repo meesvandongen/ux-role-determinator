@@ -1,26 +1,16 @@
 import {mean} from "lodash-es";
 
 export interface CategoryScores {
-    design: {
-        progress: Progress;
-        score: number;
-    };
-    writing: {
-        progress: Progress;
-        score: number;
-    };
-    development: {
-        progress: Progress;
-        score: number;
-    };
-    research: {
-        progress: Progress;
-        score: number;
-    };
-    managing: {
-        progress: Progress;
-        score: number;
-    };
+    design: CategoryScore;
+    writing: CategoryScore;
+    development: CategoryScore;
+    research: CategoryScore;
+    managing: CategoryScore;
+}
+
+export interface CategoryScore {
+    progress: Progress;
+    score: number;
 }
 
 export interface Progress {

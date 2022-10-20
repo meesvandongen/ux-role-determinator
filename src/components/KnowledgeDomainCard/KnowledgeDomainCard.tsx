@@ -24,7 +24,7 @@ export function KnowledgeDomainCard(
             <h2>{title}</h2>
             <Icon icon={Icons.CHEVRON}/>
             <S.ProgressBar>
-                <S.Progress width={(100 * progress.completed) / progress.total} />
+                <S.Progress progress={(100 * progress.completed) / progress.total} />
             </S.ProgressBar>
         </S.KnowledgeDomainCard>
     );

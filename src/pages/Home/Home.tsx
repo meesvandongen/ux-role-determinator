@@ -11,12 +11,20 @@ import * as S from './home.styles';
 export function Home(): JSX.Element {
     const selfAssessmentSnapshot = useSnapshot(selfAssessmentState);
     const selfAssessment = assessmentToCategoryScores(selfAssessmentSnapshot);
+
+    const totalCompleted = Object.keys(selfAssessment).filter((assessement) => {
+        const part = selfAssessment[assessement];
+        if (part.progress.completed === part.progress.total) {
+            return assessement + 'completed';
+        }
+    });
+
     return (
         <div>
             <S.HomeHeader>
                 <Logo style={'inverted'} />
                 <PersonalRadarChart/>
-                <div className="total">3/5</div>
+                <div className="total">{totalCompleted.length}/5</div>
                 <ul className="legend">
                     <li>Ervaring</li>
                     <li>Interesse</li>
@@ -24,9 +32,9 @@ export function Home(): JSX.Element {
             </S.HomeHeader>
 
             <div
-                className="container mx-auto grid grid-cols-2 content-center items-center justify-center gap-16 py-16 text-center font-bold">
+                className="container mx-auto grid grid-cols-2 content-center items-center justify-center gap-32 py-32 px-24">
                 <KnowledgeDomainCard domain={KnowledgeDomain.DEVELOPMENT} title="UX Development"
-                                     progress={selfAssessment[KnowledgeDomain.DEVELOPMENT].progress}/>
+                                             progress={selfAssessment[KnowledgeDomain.DEVELOPMENT].progress}/>
                 <KnowledgeDomainCard domain={KnowledgeDomain.VISUAL_DESIGN} title="UX Visual Design"
                                      progress={selfAssessment[KnowledgeDomain.VISUAL_DESIGN].progress}/>
                 <KnowledgeDomainCard domain={KnowledgeDomain.WRITING} title="UX Writing"

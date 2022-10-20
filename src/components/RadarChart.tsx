@@ -1,5 +1,6 @@
 import { range } from "lodash-es";
 import React from "react";
+import {CategoryScore, Progress} from "../calculations";
 
 interface Category {
   name: string;
@@ -7,7 +8,7 @@ interface Category {
 }
 
 interface DataPointValues {
-  [key: string]: number;
+  [key: string]: CategoryScore;
 }
 
 interface DataPoint {
@@ -68,7 +69,7 @@ export function RadarChart({
 }: RadarChartProps): JSX.Element {
   const dataPointValuesAsArrays = dataPoints.map((dataPoint) => ({
     ...dataPoint,
-    values: categories.map((category) => dataPoint.values[category.key]),
+    values: categories.map((category) => dataPoint.values[category.key].score),
   }));
 
   const radius = size / 2;

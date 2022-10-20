@@ -6,10 +6,11 @@ import {multiplyBase} from "../../styles/settings/rem.settings";
 export const HomeHeader = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto auto ${multiplyBase(10)};
+  grid-template-rows: max-content auto max-content;
   justify-content: center;
   padding: ${multiplyBase(5)};
   background-color: ${colors.background.dark};
+  min-height: 90vh;
   
   ${Logo} {
     grid-column: 1;
