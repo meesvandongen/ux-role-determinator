@@ -1,7 +1,7 @@
 import React from "react";
-import {useSnapshot} from "valtio";
-import {selfAssessmentState} from "../../../state";
-import {SkillAssessment} from "../../../components/SkillAssessment/SkillAssessment";
+import { useSnapshot } from "valtio";
+import { selfAssessmentState } from "../../../state";
+import { SkillAssessment } from "../../../components/SkillAssessment/SkillAssessment";
 
 export function DataAnalysis(): JSX.Element {
   const selfAssessmentSnapshot = useSnapshot(selfAssessmentState);

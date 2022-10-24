@@ -1,21 +1,21 @@
-import {css, CSSObject, SimpleInterpolation} from 'styled-components';
+import { css, CSSObject, SimpleInterpolation } from "styled-components";
 // Models
-import { eBreakpoint, iBreakpoints } from './media.models';
+import { eBreakpoint, iBreakpoints } from "./media.models";
 
-export type MediaQueryVariants = 'up' | 'down' | 'only' | 'between';
+export type MediaQueryVariants = "up" | "down" | "only" | "between";
 
 type ValidBreakpoint = keyof iBreakpoints;
 
 const BREAKPOINTS: iBreakpoints = {
   // XS size is set to 0, because other wise if you'd use a breakpoint
   // between XS and SM, everything under 320px would not be styled.
-  [eBreakpoint.SMALLEST]: '320px',
-  [eBreakpoint.SMALLER]: '375px',
-  [eBreakpoint.SMALL]: '480px',
-  [eBreakpoint.MEDIUM]: '768px',
-  [eBreakpoint.LARGE]: '1024px',
-  [eBreakpoint.LARGER]: '1200px',
-  [eBreakpoint.LARGEST]: '1440px',
+  [eBreakpoint.SMALLEST]: "320px",
+  [eBreakpoint.SMALLER]: "375px",
+  [eBreakpoint.SMALL]: "480px",
+  [eBreakpoint.MEDIUM]: "768px",
+  [eBreakpoint.LARGE]: "1024px",
+  [eBreakpoint.LARGER]: "1200px",
+  [eBreakpoint.LARGEST]: "1440px",
 };
 
 /* Media query helpers */
@@ -26,8 +26,12 @@ const BREAKPOINTS: iBreakpoints = {
  * @param throwOnError By default this function throws an error if it is invalid.
  * You can bypass that with this boolean
  */
-const isValidBreakpoint = (breakpoint: ValidBreakpoint, throwOnError: boolean = true) => {
-  if (!BREAKPOINTS[breakpoint] && throwOnError) throw new Error(`Using non existing breakpoint: ${breakpoint}`);
+const isValidBreakpoint = (
+  breakpoint: ValidBreakpoint,
+  throwOnError: boolean = true,
+) => {
+  if (!BREAKPOINTS[breakpoint] && throwOnError)
+    throw new Error(`Using non existing breakpoint: ${breakpoint}`);
   return !!BREAKPOINTS[breakpoint];
 };
 
@@ -37,7 +41,10 @@ const isValidBreakpoint = (breakpoint: ValidBreakpoint, throwOnError: boolean = 
  * @param throwOnError By default this function throws an error if it is invalid.
  * You can bypass that with this boolean
  */
-export const getNextBreakpoint = (breakpoint: ValidBreakpoint, throwOnError: boolean = true) => {
+export const getNextBreakpoint = (
+  breakpoint: ValidBreakpoint,
+  throwOnError: boolean = true,
+) => {
   isValidBreakpoint(breakpoint);
 
   const keys = Object.keys(BREAKPOINTS);
@@ -45,7 +52,9 @@ export const getNextBreakpoint = (breakpoint: ValidBreakpoint, throwOnError: boo
   const nextBreakpoint = keys[index + 1];
 
   if (!nextBreakpoint && throwOnError) {
-    throw new Error(`${breakpoint} is the biggest breakpoint there is. So '${breakpoint} and down' doesn't exist.`);
+    throw new Error(
+      `${breakpoint} is the biggest breakpoint there is. So '${breakpoint} and down' doesn't exist.`,
+    );
   }
 
   return nextBreakpoint as ValidBreakpoint;
@@ -57,56 +66,65 @@ export const getNextBreakpoint = (breakpoint: ValidBreakpoint, throwOnError: boo
  * From this breakpoint (including) and up.
  * @param breakpoint
  */
-const up = (breakpoint: ValidBreakpoint) => (
-  first: CSSObject | TemplateStringsArray,
-  ...interpolations: SimpleInterpolation[]
-) => {
-  isValidBreakpoint(breakpoint);
+const up =
+  (breakpoint: ValidBreakpoint) =>
+  (
+    first: CSSObject | TemplateStringsArray,
+    ...interpolations: SimpleInterpolation[]
+  ) => {
+    isValidBreakpoint(breakpoint);
 
-  return css`
-    @media only screen and (min-width: ${BREAKPOINTS[breakpoint]}) {
-      ${css(first, ...interpolations)}
-    }
-  `;
-};
+    return css`
+      @media only screen and (min-width: ${BREAKPOINTS[breakpoint]}) {
+        ${css(first, ...interpolations)}
+      }
+    `;
+  };
 
 /**
  * Until this breakpoint (including).
  * @param breakpoint
  */
-const down = (breakpoint: ValidBreakpoint) => (
-  first: CSSObject | TemplateStringsArray,
-  ...interpolations: SimpleInterpolation[]
-) => {
-  isValidBreakpoint(breakpoint);
-  const nextBreakpoint = getNextBreakpoint(breakpoint);
+const down =
+  (breakpoint: ValidBreakpoint) =>
+  (
+    first: CSSObject | TemplateStringsArray,
+    ...interpolations: SimpleInterpolation[]
+  ) => {
+    isValidBreakpoint(breakpoint);
+    const nextBreakpoint = getNextBreakpoint(breakpoint);
 
-  return css`
-    @media only screen and (max-width: ${`${parseInt(BREAKPOINTS[nextBreakpoint], 10) - 1}px`}) {
-      ${css(first, ...interpolations)}
-    }
-  `;
-};
+    return css`
+      @media only screen and (max-width: ${`${
+          parseInt(BREAKPOINTS[nextBreakpoint], 10) - 1
+        }px`}) {
+        ${css(first, ...interpolations)}
+      }
+    `;
+  };
 
 /**
  * From breakpoint 'min' until breakpoint 'max'.
  * @param min
  * @param max
  */
-const between = (min: ValidBreakpoint, max: ValidBreakpoint) => (
-  first: CSSObject | TemplateStringsArray,
-  ...interpolations: SimpleInterpolation[]
-) => {
-  isValidBreakpoint(min);
-  isValidBreakpoint(max);
+const between =
+  (min: ValidBreakpoint, max: ValidBreakpoint) =>
+  (
+    first: CSSObject | TemplateStringsArray,
+    ...interpolations: SimpleInterpolation[]
+  ) => {
+    isValidBreakpoint(min);
+    isValidBreakpoint(max);
 
-  return css`
-    @media only screen and (min-width: ${BREAKPOINTS[min]}) and (max-width: ${`${parseInt(BREAKPOINTS[max], 10) -
-  1}px`}) {
-      ${css(first, ...interpolations)}
-    }
-  `;
-};
+    return css`
+      @media only screen and (min-width: ${BREAKPOINTS[
+          min
+        ]}) and (max-width: ${`${parseInt(BREAKPOINTS[max], 10) - 1}px`}) {
+        ${css(first, ...interpolations)}
+      }
+    `;
+  };
 
 /**
  * Only a specific range. Eg only('md') will result in between('md', 'lg').
@@ -114,7 +132,9 @@ const between = (min: ValidBreakpoint, max: ValidBreakpoint) => (
  */
 const only = (breakpoint: ValidBreakpoint) => {
   const nextBreakpoint = getNextBreakpoint(breakpoint, false);
-  return isValidBreakpoint(nextBreakpoint, false) ? between(breakpoint, nextBreakpoint) : up(breakpoint);
+  return isValidBreakpoint(nextBreakpoint, false)
+    ? between(breakpoint, nextBreakpoint)
+    : up(breakpoint);
 };
 
 export default {

@@ -35,6 +35,6 @@ export const selfAssessmentState = proxy<Assessment>(initialState);
 watch((get) => {
   localStorage.setItem(
     "selfAssessmentState",
-    JSON.stringify(get(selfAssessmentState))
+    JSON.stringify(get(selfAssessmentState)),
   );
 });

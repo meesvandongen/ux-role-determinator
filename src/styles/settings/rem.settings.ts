@@ -4,8 +4,8 @@
  * @param px
  */
 export const rem = (px: number): string => {
-    const base = 16;
-    return `${(1 / base) * px}rem`;
+  const base = 16;
+  return `${(1 / base) * px}rem`;
 };
 
 /**
@@ -13,5 +13,5 @@ export const rem = (px: number): string => {
  * eg: multiply(2, '10px'); -> '20px'
  */
 export const multiplyBase = (multiple: number): string => {
-    return rem(8 * multiple);
+  return rem(8 * multiple);
 };

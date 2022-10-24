@@ -1,7 +1,7 @@
-import {createGlobalStyle} from "styled-components";
-import {fontFamilies} from "./settings/typography.settings";
-import {colors} from "./settings/colors.settings";
-import {multiplyBase, rem} from "./settings/rem.settings";
+import { createGlobalStyle } from "styled-components";
+import { fontFamilies } from "./settings/typography.settings";
+import { colors } from "./settings/colors.settings";
+import { multiplyBase, rem } from "./settings/rem.settings";
 
 export const GlobalStyles = createGlobalStyle`
     

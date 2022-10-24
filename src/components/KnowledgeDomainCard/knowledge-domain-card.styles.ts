@@ -1,17 +1,17 @@
-import styled, {keyframes} from "styled-components";
-import {multiplyBase} from "../../styles/settings/rem.settings";
-import {fontSizes} from "../../styles/settings/typography.settings";
-import {colors} from "../../styles/settings/colors.settings";
-import {borderRadius} from "../../styles/settings/border.settings";
-import {Link} from "react-router-dom";
+import styled, { keyframes } from "styled-components";
+import { multiplyBase } from "../../styles/settings/rem.settings";
+import { fontSizes } from "../../styles/settings/typography.settings";
+import { colors } from "../../styles/settings/colors.settings";
+import { borderRadius } from "../../styles/settings/border.settings";
+import { Link } from "react-router-dom";
 
 interface ProgressStyles {
-    progress: number;
+  progress: number;
 }
 
 export const progressAnimation = (progress: number) => {
-    const test = progress - 100;
-    return keyframes`
+  const test = progress - 100;
+  return keyframes`
       0% {
         transform: translateX(-100%);
       }
@@ -19,12 +19,12 @@ export const progressAnimation = (progress: number) => {
         transform: translateX(${test}%);
       }
     `;
-}
+};
 
 export const KnowledgeDomainCard = styled(Link)`
   display: grid;
   grid-template-columns: ${multiplyBase(5)} auto ${multiplyBase(3)};
-  grid-template-rows: auto ${multiplyBase(.5)};
+  grid-template-rows: auto ${multiplyBase(0.5)};
   grid-column-gap: ${multiplyBase(2)};
   grid-row-gap: ${multiplyBase(2)};
   align-items: center;
@@ -49,7 +49,7 @@ export const KnowledgeDomainCard = styled(Link)`
     transform: rotate(-90deg);
     transition: all ease-in-out 200ms;
   }
-  
+
   &:hover {
     > *:nth-child(3) {
       transform: translateX(${multiplyBase(1)}) rotate(-90deg);
@@ -65,7 +65,6 @@ export const ProgressBar = styled.div`
   border-radius: ${borderRadius.default};
   background-color: ${colors.background.light};
   overflow: hidden;
-
 `;
 
 export const Progress = styled.div<ProgressStyles>`
@@ -74,5 +73,6 @@ export const Progress = styled.div<ProgressStyles>`
   background-color: ${colors.statuses.progress};
   width: 100%;
   height: 100%;
-  animation: ${props => progressAnimation(props.progress)} ease-in-out 700ms forwards;
+  animation: ${(props) => progressAnimation(props.progress)} ease-in-out 700ms
+    forwards;
 `;

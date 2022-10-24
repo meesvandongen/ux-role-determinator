@@ -1,6 +1,6 @@
 import { range } from "lodash-es";
 import React from "react";
-import {CategoryScore, Progress} from "../calculations";
+import { CategoryScore, Progress } from "../calculations";
 
 interface Category {
   name: string;
