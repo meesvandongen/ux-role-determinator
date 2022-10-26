@@ -1,4 +1,3 @@
-import React from "react";
 import { CirclesRange } from "./CirclesRange/CirclesRange";
 
 interface TaskSectionProps {

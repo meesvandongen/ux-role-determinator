@@ -1,4 +1,3 @@
-import React from "react";
 import * as S from "./skill-assessment.styles";
 import { CirclesRange } from "../CirclesRange/CirclesRange";
 

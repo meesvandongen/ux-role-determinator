@@ -1,4 +1,3 @@
-import React from "react";
 import { IconCanvas } from "../IconCanvas";
 import { Logo } from "../Logo/Logo";
 import * as S from "./questionnaire-layout.styles";

@@ -1,11 +1,10 @@
-import React from "react";
 import { Campaigning } from "./questions/Campaigning";
 import { ContentManagement } from "./questions/ContentManagement";
 import { ContentStrategy } from "./questions/ContentStrategy";
 import { ContentWriting } from "./questions/ContentWriting";
 import { QuestionnaireLayout } from "../../components/QuestionnaireLayout/QuestionnaireLayout";
 
-export function UxWriting(): JSX.Element {
+export default function UxWriting(): JSX.Element {
   return (
     <QuestionnaireLayout
       title={"UX Writing"}

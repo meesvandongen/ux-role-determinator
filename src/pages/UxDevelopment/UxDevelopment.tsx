@@ -1,10 +1,9 @@
-import React from "react";
 import { CodeUxAdvocate } from "./questions/CodeUxAdvocate";
 import { DesignImplementation } from "./questions/DesignImplementation";
 import { RichInteraction } from "./questions/RichInteraction";
 import { QuestionnaireLayout } from "../../components/QuestionnaireLayout/QuestionnaireLayout";
 
-export function UxDevelopment(): JSX.Element {
+export default function UxDevelopment(): JSX.Element {
   return (
     <QuestionnaireLayout
       title={"UX Development"}

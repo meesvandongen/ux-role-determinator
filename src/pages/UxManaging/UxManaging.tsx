@@ -1,8 +1,7 @@
-import React from "react";
 import { Sample } from "./Sample";
 import { QuestionnaireLayout } from "../../components/QuestionnaireLayout/QuestionnaireLayout";
 
-export function UxManaging(): JSX.Element {
+export default function UxManaging(): JSX.Element {
   return (
     <QuestionnaireLayout
       title={"UX Managing"}

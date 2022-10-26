@@ -1,4 +1,3 @@
-import React from "react";
 import { KnowledgeDomain } from "../../models/knowledge-domain.models";
 import { Icon, Icons } from "../Icon/Icon";
 import * as S from "./knowledge-domain-card.styles";

@@ -1,4 +1,3 @@
-import React from "react";
 import { VisualDesignIcon } from "./icons/VisualDesign.icon";
 import { DevelopmentIcon } from "./icons/Development.icon";
 import * as S from "./icon.styles";

@@ -1,5 +1,3 @@
-import React from "react";
-
 export function WritingIcon(): JSX.Element {
   return (
     <>

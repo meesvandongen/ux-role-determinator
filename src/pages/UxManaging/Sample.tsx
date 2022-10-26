@@ -1,4 +1,3 @@
-import React from "react";
 import { useSnapshot } from "valtio";
 import { selfAssessmentState } from "../../state";
 import { SkillAssessment } from "../../components/SkillAssessment/SkillAssessment";

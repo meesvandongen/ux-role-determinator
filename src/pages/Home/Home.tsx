@@ -1,4 +1,3 @@
-import React from "react";
 import { PersonalRadarChart } from "../../components/PersonalRadarChart";
 import { KnowledgeDomain } from "../../models/knowledge-domain.models";
 import { KnowledgeDomainCard } from "../../components/KnowledgeDomainCard/KnowledgeDomainCard";
