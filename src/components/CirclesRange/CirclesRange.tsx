@@ -1,5 +1,5 @@
 import range from "lodash-es/range";
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import * as S from "./circle-range.styles";
 
 interface CirclesRangeProps {
