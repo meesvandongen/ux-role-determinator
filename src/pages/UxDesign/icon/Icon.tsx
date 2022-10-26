@@ -20,7 +20,7 @@ type GLTFResult = GLTF & {
 export function Icon(): JSX.Element {
   const group = useRef<THREE.Group>(null);
   const group2 = useRef<THREE.Group>(null);
-  const { nodes, materials } = useGLTF(iconURL) as GLTFResult;
+  const { nodes, materials } = useGLTF(iconURL) as unknown as GLTFResult;
   const camera = useThree((state) => state.camera);
 
   useEffect(() => {
