@@ -29,6 +29,7 @@ function App(): JSX.Element {
       <ScrollToTop />
       <Routes>
         <Route path="writing" element={<UxWriting />} />
+        <Route path="category/:key" element={<UxWriting />} />
         <Route path="development" element={<UxDevelopment />} />
         <Route path="design" element={<UxDesign />} />
         <Route path="research" element={<UxResearch />} />
@@ -38,8 +39,12 @@ function App(): JSX.Element {
       <div className="hidden">
         {isAuthenticated ? "I am authenticated" : "I am not authenticated"}
         <pre>{user ? JSON.stringify(user, null, 2) : "No user"}</pre>
-        <a href={github}>Sign in with GitHub</a>
-        <button onClick={signOut}>Sign Out</button>
+        <a className="p-2" href={github}>
+          Sign in with GitHub
+        </a>
+        <button className="p-2" onClick={signOut}>
+          Sign Out
+        </button>
       </div>
 
       <Footer />
