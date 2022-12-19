@@ -1,3 +1,58 @@
 table:
   name: categories
   schema: public
+array_relationships:
+  - name: questions
+    using:
+      foreign_key_constraint_on:
+        column: category_id
+        table:
+          name: questions
+          schema: public
+insert_permissions:
+  - role: editor
+    permission:
+      check: {}
+      columns:
+        - description
+        - key
+        - order
+        - title
+select_permissions:
+  - role: editor
+    permission:
+      columns:
+        - order
+        - description
+        - key
+        - title
+        - created_at
+        - updated_at
+        - id
+      filter: {}
+  - role: user
+    permission:
+      columns:
+        - order
+        - description
+        - key
+        - title
+        - created_at
+        - updated_at
+        - id
+      filter: {}
+update_permissions:
+  - role: editor
+    permission:
+      columns:
+        - description
+        - key
+        - order
+        - title
+      filter: {}
+      check: null
+delete_permissions:
+  - role: editor
+    permission:
+      backend_only: false
+      filter: {}

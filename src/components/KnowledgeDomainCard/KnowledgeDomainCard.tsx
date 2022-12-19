@@ -4,24 +4,25 @@ import * as S from "./knowledge-domain-card.styles";
 import { Progress } from "../../calculations";
 
 interface KnowledgeDomainCardProps {
-  domain: KnowledgeDomain;
+  id: string;
   title: string;
-  progress: Progress;
+  // progress: number;
+  // icon: string;
 }
 
 export function KnowledgeDomainCard({
   title,
-  domain,
-  progress,
-}: KnowledgeDomainCardProps): JSX.Element {
+  id,
+}: // progress,
+KnowledgeDomainCardProps): JSX.Element {
   return (
-    <S.KnowledgeDomainCard to={domain}>
-      <Icon icon={domain} />
+    <S.KnowledgeDomainCard to={`/categories/${id}`}>
+      {/* <Icon icon={domain} /> */}
       <h2>{title}</h2>
       <Icon icon={Icons.CHEVRON} />
-      <S.ProgressBar>
+      {/* <S.ProgressBar>
         <S.Progress progress={(100 * progress.completed) / progress.total} />
-      </S.ProgressBar>
+      </S.ProgressBar> */}
     </S.KnowledgeDomainCard>
   );
 }

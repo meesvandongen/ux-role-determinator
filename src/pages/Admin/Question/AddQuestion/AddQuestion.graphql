@@ -1,0 +1,21 @@
+mutation AddQuestion(
+  $title: String!
+  $description_knowledge: String!
+  $description_interest: String!
+  $order: Int!
+) {
+  insert_questions_one(
+    object: {
+      title: $title
+      description_interest: $description_interest
+      description_knowledge: $description_knowledge
+      order: $order
+    }
+  ) {
+    id
+    description_interest
+    description_knowledge
+    title
+    order
+  }
+}

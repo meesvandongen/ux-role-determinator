@@ -1,0 +1,14 @@
+query Category($id: uuid!) {
+  categories_by_pk(id: $id) {
+    id
+    key
+    title
+    description
+    questions {
+      id
+      description_interest
+      description_knowledge
+      title
+    }
+  }
+}

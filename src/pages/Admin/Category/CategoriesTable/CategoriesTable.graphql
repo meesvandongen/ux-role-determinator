@@ -1,0 +1,7 @@
+query CategoriesTable {
+  categories {
+    id
+    key
+    title
+  }
+}

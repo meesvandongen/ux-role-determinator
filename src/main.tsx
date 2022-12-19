@@ -12,7 +12,12 @@ const root = createRoot(container!);
 root.render(
   <StrictMode>
     <NhostReactProvider nhost={nhost}>
-      <NhostApolloProvider nhost={nhost}>
+      <NhostApolloProvider
+        nhost={nhost}
+        headers={{
+          "x-hasura-role": "admin",
+        }}
+      >
         <BrowserRouter>
           <App />
         </BrowserRouter>

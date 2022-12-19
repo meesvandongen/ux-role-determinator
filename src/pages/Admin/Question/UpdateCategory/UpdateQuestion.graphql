@@ -1,0 +1,23 @@
+mutation UpdateQuestion(
+  $id: uuid!
+  $title: String!
+  $description_knowledge: String!
+  $description_interest: String!
+  $order: Int!
+) {
+  update_questions_by_pk(
+    pk_columns: { id: $id }
+    _set: {
+      title: $title
+      description_interest: $description_interest
+      description_knowledge: $description_knowledge
+      order: $order
+    }
+  ) {
+    id
+    description_interest
+    description_knowledge
+    title
+    order
+  }
+}

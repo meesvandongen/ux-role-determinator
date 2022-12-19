@@ -1,8 +1,8 @@
 import * as S from "./footer.styles";
 
-export function Footer() {
+export function Footer({ className }: { className?: string }) {
   return (
-    <S.Footer>
+    <S.Footer className={className}>
       <a
         href="https://github.com/meesvandongen/ux-role-determinator"
         target="_blank"

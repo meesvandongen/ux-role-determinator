@@ -1,0 +1,13 @@
+query QuestionsTable {
+  questions {
+    description_interest
+    description_knowledge
+    title
+    order
+    id
+    category {
+      id
+      key
+    }
+  }
+}

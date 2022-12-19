@@ -1,0 +1,7 @@
+query Home {
+  categories {
+    id
+    created_at
+    title
+  }
+}

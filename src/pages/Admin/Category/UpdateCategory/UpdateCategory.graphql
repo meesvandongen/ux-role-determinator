@@ -1,0 +1,16 @@
+mutation UpdateCategory(
+  $id: uuid!
+  $title: String!
+  $key: String!
+  $description: String!
+) {
+  update_categories_by_pk(
+    pk_columns: { id: $id }
+    _set: { title: $title, description: $description, key: $key }
+  ) {
+    id
+    description
+    key
+    title
+  }
+}

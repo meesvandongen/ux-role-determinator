@@ -1,0 +1,20 @@
+mutation AddCategory(
+  $title: String!
+  $key: String!
+  $description: String!
+  $order: Int!
+) {
+  insert_categories_one(
+    object: {
+      title: $title
+      description: $description
+      key: $key
+      order: $order
+    }
+  ) {
+    id
+    description
+    key
+    title
+  }
+}

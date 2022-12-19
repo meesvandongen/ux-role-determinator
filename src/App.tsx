@@ -1,54 +1,51 @@
-import { Route, Routes } from "react-router-dom";
+import { Outlet, Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home/Home";
 import ScrollToTop from "./components/ScrollToTop";
 import { GlobalStyles } from "./styles/global.styles";
 import { Footer } from "./components/footer/Footer";
-import { lazy, Suspense } from "react";
-import {
-  useAuthenticationStatus,
-  useProviderLink,
-  useSignOut,
-  useUserData,
-} from "@nhost/react";
-
-const UxWriting = lazy(() => import("./pages/UxWriting/UxWriting"));
-const UxDevelopment = lazy(() => import("./pages/UxDevelopment/UxDevelopment"));
-const UxDesign = lazy(() => import("./pages/UxDesign/UxDesign"));
-const UxResearch = lazy(() => import("./pages/UxResearch/UxResearch"));
-const UxManaging = lazy(() => import("./pages/UxManaging/UxManaging"));
+import { Suspense } from "react";
+import Category from "./pages/User/Category/Category";
+import AdminIndex from "./pages/Admin/AdminIndex";
+import { AuthGuard } from "./components/AuthGuard/AuthGuard";
+import { AddCategory } from "./pages/Admin/Category/AddCategory/AddCategory";
+import { NavBar } from "./components/NavBar/NavBar";
 
 function App(): JSX.Element {
-  const { github } = useProviderLink();
-  const { isAuthenticated, isLoading } = useAuthenticationStatus();
-  const user = useUserData();
-  const { signOut } = useSignOut();
-
   return (
-    <Suspense>
-      <GlobalStyles />
-      <ScrollToTop />
-      <Routes>
-        <Route path="writing" element={<UxWriting />} />
-        <Route path="category/:key" element={<UxWriting />} />
-        <Route path="development" element={<UxDevelopment />} />
-        <Route path="design" element={<UxDesign />} />
-        <Route path="research" element={<UxResearch />} />
-        <Route path="managing" element={<UxManaging />} />
-        <Route path="/" element={<Home />} />
-      </Routes>
-      <div className="hidden">
-        {isAuthenticated ? "I am authenticated" : "I am not authenticated"}
-        <pre>{user ? JSON.stringify(user, null, 2) : "No user"}</pre>
-        <a className="p-2" href={github}>
-          Sign in with GitHub
-        </a>
-        <button className="p-2" onClick={signOut}>
-          Sign Out
-        </button>
+    <>
+      <div className="flex-auto">
+        <Suspense>
+          <NavBar />
+          <GlobalStyles />
+          <ScrollToTop />
+          <div className="p-4">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route
+                path="admin"
+                element={
+                  <AuthGuard>
+                    <Outlet />
+                  </AuthGuard>
+                }
+              >
+                <Route index element={<AdminIndex />} />
+                <Route path="categories">
+                  <Route path=":id" element={<Category />} />
+                  <Route path=":id/edit" element={<Category />} />
+                  <Route path="add" element={<AddCategory />} />
+                </Route>
+                <Route path="questions/:id" element={<Category />} />
+              </Route>
+              <Route path="admin/categories/:id" element={<Category />} />
+              <Route path="categories/:id" element={<Category />} />
+            </Routes>
+          </div>
+        </Suspense>
       </div>
 
-      <Footer />
-    </Suspense>
+      <Footer className="flex-shrink-0" />
+    </>
   );
 }
 

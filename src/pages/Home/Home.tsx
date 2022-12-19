@@ -6,10 +6,13 @@ import { selfAssessmentState } from "../../state";
 import { assessmentToCategoryScores, categories } from "../../calculations";
 import { Logo } from "../../components/Logo/Logo";
 import * as S from "./home.styles";
+import { useHomeQuery } from "../../utils/__generated__/graphql";
 
 export function Home(): JSX.Element {
   const selfAssessmentSnapshot = useSnapshot(selfAssessmentState);
   const selfAssessment = assessmentToCategoryScores(selfAssessmentSnapshot);
+
+  const { data, loading } = useHomeQuery();
 
   const totalCompleted = categories.reduce((acc, category) => {
     const part = selfAssessment[category];
@@ -32,7 +35,14 @@ export function Home(): JSX.Element {
       </S.HomeHeader>
 
       <div className="container mx-auto grid grid-cols-2 content-center items-center justify-center gap-32 py-32 px-24">
-        <KnowledgeDomainCard
+        {data?.categories.map((category) => (
+          <KnowledgeDomainCard
+            key={category.id}
+            title={category.title}
+            id={category.id}
+          />
+        ))}
+        {/* <KnowledgeDomainCard
           domain={KnowledgeDomain.DEVELOPMENT}
           title="UX Development"
           progress={selfAssessment[KnowledgeDomain.DEVELOPMENT].progress}
@@ -56,7 +66,7 @@ export function Home(): JSX.Element {
           domain={KnowledgeDomain.RESEARCH}
           title="UX Research"
           progress={selfAssessment[KnowledgeDomain.RESEARCH].progress}
-        />
+        /> */}
       </div>
     </div>
   );
